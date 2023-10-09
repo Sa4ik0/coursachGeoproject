@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="modal-background" id="modal-background"></div>
+    <div class="calculatorForm" id="calculatorModal">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <p>Калькулятор</p>
+        </div>
+        <form class="modalWrapper">
+            <div class="functions">
+                <div class="slider-container">
+                    <p class="slider-p">Площадь территории</p>
+                    <input type="range" id="slider" min="100" max="10000" value="100" step="1">
+                    <div class="slider-range">
+                        <p id="slider-value">100</p>
+                        <p class="slider-value-units">м²</p>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-btn">Выберите сложность</button>
+                    <ul class="dropdown-content">
+                        <li><a href="#" id="1">Высотные измерения +15%</a></li>
+                        <li><a href="#" id="2">Горная местность +25%</a></li>
+                        <li><a href="#" id="3">Болото +20%</a></li>
+                        <li><a href="#" id="4">Канавы +10%</a></li>
+                        <li><a href="#" id="5">Без сложностей</a></li>
+                    </ul>
+                </div>
+                <div class="map">
+                    <img src="./images/map_ravnina.png" alt="Карта" class="map-image" id="map-image" width="450px" height="450px">
+                    <div class="highlight-area" id="highlight-area"></div>
+                </div>
+            </div>
+            <div class="results">
+                <p class="baseCost" id="baseCost"></p>
+                <p class="result" id="result"></p>
+            </div>
+        </form>
+    </div>
+    <div class="white">
+        <header>
+            <div class="header_menu">
+                <p class="logo">ГЕОПРОЕКТ</p>
+                <ul class="menu">
+                    <li class="menu_item"><a href="#info">Почему мы?</a></li>
+                    <li class="menu_item">Отзывы</li>
+                    <li class="menu_item"><a href="#calculator">Калькулятор</a></li>
+                </ul>
+            </div>
+            <div class="present">
+                <span class="material-symbols-rounded present_engineer">engineering</span>
+                <h1 class="material-symbols-rounded present_text">GEOPROJECT</h1>
+                <span class="material-symbols-rounded present_terrain">settings</span>
+            </div>
+        </header>
+        <main>
+            <div class="info" id="info">
+                <div class="info-image"></div>
+                <div class="left">
+                    <h4 class="left-title">Ваш надежный партнер по комплексным решениям в области геодезии</h4>
+                    <p class="left-text">Точность, аккуратность и компетентность - все это предлагаем мы! Благодаря большому опыту работы в различных отраслях промышленности мы гарантируем исключительное качество геодезических услуг, отвечающее вашим потребностям.</p>
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-image"></div>
+                <div class="left">
+                    <h4 class="left-title">Раскройте потенциал точных данных для принятия более эффективных решений</h4>
+                    <p class="left-text">Наши передовые технологии и современное оборудование превращают необработанные данные в ценные сведения для ваших проектов.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="gallery">
+        <h1 class="gallery-title">Наша экспертиза</h1>
+        <div class="gallery-images">
+            <div class="top-image">
+                <div class="gallery-image1"></div>
+            </div>
+            <div class="bottom-images">
+                <div class="gallery-image2"></div>
+                <div class="gallery-image3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="calculator" id="calculator">
+        <h1 class="calculator-title">Поробуйте калькулятор!</h1>
+        <p class="calculator-text">С помощью нашего калькулятор, вы сможете посчитать стоимость вашего заказа! Он учитывает все нюансы и вы можете настроить цену, подоходящую именно вам.</p>
+        <button class="order-btn">Сделать заказ</button>
+        <button class="calculator-btn openModal">Калькулятор</button>
+    </div>
+    <footer>
+        <p class="footer-text">©2023 ГЕОПРОЕКТ</p>
+    </footer>
+</body>
+</html>
