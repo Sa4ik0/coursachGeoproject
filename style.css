@@ -115,10 +115,10 @@ main {
 .present_engineer, .present_terrain {
     font-size: 550px !important;
 }
-
+/* 
 .present_terrain {
     animation: rotating 10s linear infinite;
-}
+} */
 
 .present_text {
     font-size: 62px !important;
@@ -832,16 +832,4 @@ footer {
     .menu_item {
         font-size: 24px;
     }
-}
-
-.info:hover .info-image {
-    transform: scale(1.05); 
-}
-
-.info:hover .left-title {
-    transform: scale(1.05);
-}
-
-.info:hover .left-text {
-    transform: scale(1.05);
 }
