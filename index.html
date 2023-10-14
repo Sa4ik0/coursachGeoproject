@@ -13,7 +13,7 @@
     <div class="calculatorForm" id="calculatorModal">
         <div class="modal-header">
             <span class="close">&times;</span>
-            <p>Калькулятор</p>
+            <p class="modal-header-title">КАЛЬКУЛЯТОР</p>
         </div>
         <form class="modalWrapper">
             <div class="functions">
@@ -41,8 +41,34 @@
                 </div>
             </div>
             <div class="results">
-                <p class="baseCost" id="baseCost"></p>
-                <p class="result" id="result"></p>
+                <div class="order-info">
+                    <p class="baseCost" id="baseCost"></p>
+                    <p class="result" id="result"></p>
+                    <p class="id-order" id="id-order"></p>
+                </div>
+                <div class="inputs">
+                    <div class="input-wrapper">
+                        <label for="">Номер телефона:</label>
+                        <input type="tel" name="" id="tel">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="">Фамилия:</label>
+                        <input type="text" name="" id="surname">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="">Имя:</label>
+                        <input type="text" name="" id="name">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="">Отчество:</label>
+                        <input type="text" name="" id="lastname">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="">Город:</label>
+                        <input type="text" name="" id="town">
+                    </div>
+                    <input type="submit" value="Сделать заказ" class="calculator-btn-submit">
+                </div>
             </div>
         </form>
     </div>

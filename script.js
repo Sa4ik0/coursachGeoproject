@@ -66,7 +66,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const dropdownContent = document.querySelector('.dropdown-content');
     const complexityOptions = document.querySelectorAll('.dropdown-content a');
 
-    dropdownBtn.addEventListener('click', function () {
+    dropdownBtn.addEventListener('click', function (e) {
+        e.preventDefault(); // Предотвращаем стандартное действие перехода по ссылке
+    
         if (dropdownContent.style.display === 'block') {
             dropdownContent.style.display = 'none';
         } else {
@@ -119,7 +121,7 @@ function calculate() {
     // Выводим результат на страницу
     const resultElement = document.getElementById('result');
     const baseCostText = document.getElementById('baseCost');
-    baseCostText.innerText = `Базовая стоимость: ${Math.round(baseCost * complexityFactor)} рублей`;
+    baseCostText.innerText = `Базовая стоимость: ${Math.round(baseCost * complexityFactor)} руб.`;
     resultElement.innerText = `Стоимость заказа: ${Math.round(totalCost)} руб.`;
 }
 
@@ -142,5 +144,11 @@ document.addEventListener('click', function (e) {
     }
 });
 
+//Генерация случайного ID
+const randomId = Math.random().toString(36).substring(2, 8); // Пример случайного ID
+
+// Находим элемент с id "id-order" и вставляем в него текст с сгенерированным ID
+const idOrderElement = document.getElementById('id-order');
+idOrderElement.textContent = `ID-Заказа: ${randomId}`;
 
 calculate()

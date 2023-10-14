@@ -24,6 +24,21 @@ a {
     color: #000000;
 }
 
+label {
+    color: #FFF;
+    font-family: Martian Mono;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px; /* 100% */
+}
+
+input {
+    background: #FFF;
+    height: 43px;
+    border: none;
+}
+
 footer {
     align-items: center;
     background-color: #fff;
@@ -66,6 +81,12 @@ main {
 .menu {
     list-style: none;
     text-decoration: none;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .logo {
@@ -446,7 +467,7 @@ footer {
 }
 
 .calculatorForm {
-    background-color: #2f3e46;
+    background-color: black;
     display: none;
     position: fixed;
     width: 1000px;
@@ -468,10 +489,11 @@ footer {
 
 .close {
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 10px;
     font-size: 40px;
     cursor: pointer;
+    color: white;
 }
 
 .openModal {
@@ -511,11 +533,20 @@ footer {
 }
 
 .modal-header {
-    background-color: #84A98C;
     padding: 20px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     position: relative;
+}
+
+.modal-header-title {
+    color: #FFF;
+    text-align: center;
+    font-family: Martian Mono;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px; /* 50% */
 }
 
 .slider-value-units {
@@ -610,12 +641,37 @@ footer {
     transform-origin: center center; /* Устанавливаем точку преобразования в центр */
 }
 
+.inputs {
+    display: grid;
+    align-content: space-around;
+    flex: 1;
+}
+
+.id-order {
+    color: white;
+}
+
+.order-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .results {
     padding: 50px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
+}
+
+.calculator-btn-submit {
+    color: #000;
+    font-family: Martian Mono;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 100% */
 }
 
 .modalWrapper {
