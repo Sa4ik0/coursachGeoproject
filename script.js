@@ -152,3 +152,67 @@ const idOrderElement = document.getElementById('id-order');
 idOrderElement.textContent = `ID-Заказа: ${randomId}`;
 
 calculate()
+
+const carousel = document.querySelector(".bottom-images");
+const firstImg = document.querySelector(".bottom-images img");
+const arrowIcons = document.querySelectorAll(".slider-wrapper p");
+
+let isDragStart = false, prevPageX, prevScrollLeft;
+let firstImgWidth = firstImg.clientWidth + 20;
+
+arrowIcons.forEach(icon => {
+    icon.addEventListener('click', () => {
+        carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+    })
+})
+
+const dragStart = (e) => {
+    isDragStart = true;
+    prevPageX = e.pageX;
+    prevScrollLeft = carousel.scrollLeft;
+}
+
+const dragging = (e) => { 
+    if(!isDragStart) return;
+    e.preventDefault();
+    carousel.classList.add("dragging")
+    let positionDiff = e.pageX - prevPageX;
+    carousel.scrollLeft = prevScrollLeft - positionDiff;
+}
+
+const dragStop = () => {
+    isDragStart = false;
+    carousel.classList.remove("dragging")
+}
+
+carousel.addEventListener("mousedown", dragStart)
+carousel.addEventListener("mousemove", dragging)
+carousel.addEventListener("mouseup", dragStop)
+
+//animations
+function onEntry(entry) {
+entry.forEach(change => {
+    if (change.target.id == 'sec-anim' && change.isIntersecting) {
+        change.target.classList.add('animate__animated');
+        change.target.classList.add('animate__fadeInLeft');   
+    } else if (change.target.id == 'head' && change.isIntersecting) {
+        change.target.classList.add('animate__animated');
+        change.target.classList.add('animate__fadeInDown');
+    } else if (change.target.id == 'gallery' && change.isIntersecting) {
+        change.target.classList.add('animate__animated');
+        change.target.classList.add('animate__fadeIn');
+    } else if (change.isIntersecting) {
+        change.target.classList.add('animate__animated');
+        change.target.classList.add('animate__fadeInRight');
+    }
+});
+}
+
+
+let options = { threshold: [0.3] };
+let observer = new IntersectionObserver(onEntry, options);
+let elements = document.querySelectorAll('.title-anim');
+
+for (let elm of elements) {
+    observer.observe(elm);
+}

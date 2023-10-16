@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="./script.js" defer></script>
 </head>
 <body>
@@ -74,7 +75,7 @@
     </div>
     <div class="white">
         <header>
-            <div class="header_menu">
+            <div class="header_menu title-anim" id="head">
                 <p class="logo">ГЕОПРОЕКТ</p>
                 <ul class="menu">
                     <li class="menu_item"><a href="#info">Почему мы?</a></li>
@@ -83,20 +84,20 @@
                 </ul>
             </div>
             <div class="present">
-                <span class="material-symbols-rounded present_engineer">engineering</span>
-                <h1 class="material-symbols-rounded present_text">GEOPROJECT</h1>
-                <span class="material-symbols-rounded present_terrain">settings</span>
+                <span class="material-symbols-rounded present_engineer animate__animated animate__fadeInLeft">engineering</span>
+                <h1 class="material-symbols-rounded present_text animate__animated animate__fadeInDown">GEOPROJECT</h1>
+                <span class="material-symbols-rounded present_terrain animate__animated animate__fadeInRight">settings</span>
             </div>
         </header>
         <main>
-            <div class="info" id="info">
+            <div class="info title-anim" id="info">
                 <div class="info-image"></div>
                 <div class="left">
                     <h4 class="left-title">Ваш надежный партнер по комплексным решениям в области геодезии</h4>
                     <p class="left-text">Точность, аккуратность и компетентность - все это предлагаем мы! Благодаря большому опыту работы в различных отраслях промышленности мы гарантируем исключительное качество геодезических услуг, отвечающее вашим потребностям.</p>
                 </div>
             </div>
-            <div class="info">
+            <div class="info title-anim title-anim-sec" id="sec-anim">
                 <div class="info-image"></div>
                 <div class="left">
                     <h4 class="left-title">Раскройте потенциал точных данных для принятия более эффективных решений</h4>
@@ -106,19 +107,35 @@
         </main>
     </div>
     <div class="gallery">
-        <h1 class="gallery-title">Наша экспертиза</h1>
+        <h1 class="gallery-title title-anim" id="gallery">Что делает нашу экспертизу непревзойденной?</h1>
         <div class="gallery-images">
-            <div class="top-image">
-                <div class="gallery-image1"></div>
+            <div class="top-image title-anim" id="gallery">
+                    <li class="exp-text">Опыт и навыки:</li>
+                        <p class="exp-desc">Наши геодезисты обладают глубокими знаниями и богатым опытом в области земельного и инженерного измерения. Мы предоставляем точные и надежные данные, которые вы можете использовать в любом проекте.</p>
+                    <li class="exp-text">Современное оборудование:</li>
+                        <p class="exp-desc">Мы вкладываем средства в самые передовые технологии и геодезическое оборудование, чтобы обеспечивать наши клиенты наилучшими решениями.</p>
+                    <li class="exp-text">Персонализированный подход:</li>
+                        <p class="exp-desc">Мы понимаем, что каждый проект уникален. Мы работаем с вами, чтобы разработать индивидуальное решение, которое соответствует вашим потребностям и бюджету.</p>
+                    <li class="exp-text">Надежность и точность:</li>
+                        <p class="exp-desc">Наша цель - обеспечить вас точными данными и результатами, которые можно доверять. Мы стремимся к 100% удовлетворенности клиентов.</p>
+                        <p class="exp-desc">Независимо от того, нужны ли вам геодезические измерения для строительства, земельного участка, геодезической карты или других проектов, Геопроект всегда готов помочь вам достичь ваших целей. Доверьте нам ваш проект, и мы позаботимся о нем, как о собственном.</p>
             </div>
-            <div class="bottom-images">
-                <div class="gallery-image2"></div>
-                <div class="gallery-image3"></div>
+            <div class="slider-wrapper">
+                <p id="left">Влево</p>
+                <div class="bottom-images">
+                    <img class="gallery-image2" src="./images/gallery2.jpg">
+                    <img class="gallery-image3" src="./images/gallery3.jpg">
+                    <img class="gallery-image4" src="./images/gallery4.jpg">
+                    <img class="gallery-image5" src="./images/gallery5.jpg">
+                    <img class="gallery-image6" src="./images/gallery6.jpg">
+                    <img class="gallery-image7" src="./images/gallery7.jpg">
+                </div>
+                <p id="right">Вправо</p>
             </div>
         </div>
     </div>
     <div class="calculator" id="calculator">
-        <h1 class="calculator-title">Поробуйте калькулятор!</h1>
+        <h1 class="calculator-title title-anim">Поробуйте калькулятор!</h1>
         <p class="calculator-text">С помощью нашего калькулятор, вы сможете посчитать стоимость вашего заказа! Он учитывает все нюансы и вы можете настроить цену, подоходящую именно вам.</p>
         <button class="order-btn">Сделать заказ</button>
         <button class="calculator-btn openModal">Калькулятор</button>
