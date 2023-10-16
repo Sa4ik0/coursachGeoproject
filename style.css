@@ -722,7 +722,7 @@ footer {
 
 .inputs {
     display: grid;
-    align-content: space-around;
+    align-items: end;
     flex: 1;
 }
 
