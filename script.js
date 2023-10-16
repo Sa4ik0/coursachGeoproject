@@ -201,6 +201,30 @@ entry.forEach(change => {
     } else if (change.target.id == 'gallery' && change.isIntersecting) {
         change.target.classList.add('animate__animated');
         change.target.classList.add('animate__fadeIn');
+    } else if (change.target.id == 'image2' && change.isIntersecting) {
+        change.target.classList.add('animate__animated');
+        change.target.classList.add('animate__fadeInDown');
+    }  else if (change.target.id == 'image3' && change.isIntersecting) {
+        setTimeout(() => { 
+            change.target.classList.add('animate__animated');
+            change.target.classList.add('animate__fadeInDown');
+        },200);
+    }  else if (change.target.id == 'image4' && change.isIntersecting) {
+        setTimeout(() => { 
+            change.target.classList.add('animate__animated');
+            change.target.classList.add('animate__fadeInDown');
+        },400);;
+    }  else if (change.target.id == 'image5' && change.isIntersecting) {
+        setTimeout(() => { 
+            change.target.classList.add('animate__animated');
+            change.target.classList.add('animate__fadeInDown');
+        },600);
+    } else if (change.target.id == 'calc-text' && change.isIntersecting) {
+        change.target.classList.add('animate__animated');
+        change.target.classList.add('animate__fadeInLeft');
+    } else if (change.target.id == 'calc-btn' && change.isIntersecting) {
+        change.target.classList.add('animate__animated');
+        change.target.classList.add('animate__fadeInUp');
     } else if (change.isIntersecting) {
         change.target.classList.add('animate__animated');
         change.target.classList.add('animate__fadeInRight');

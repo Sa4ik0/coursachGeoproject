@@ -270,11 +270,10 @@ p {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 20px;
-    height: min-content; 
+    height: min-content;
     overflow: hidden;
     padding: 0;
     position: relative;
-    /* width: 100%; */
     scroll-behavior: smooth;
 }
 
@@ -314,7 +313,7 @@ p {
 }
 
 .gallery-image2 {
-    width: 420px;
+    width: 415px;
     height: 400px;
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
@@ -322,7 +321,7 @@ p {
 }
 
 .gallery-image3 {
-    width: 420px;
+    width: 415px;
     height: 400px;
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
@@ -330,7 +329,7 @@ p {
 }
 
 .gallery-image4 {
-    width: 420px;
+    min-width: 415px;
     height: 400px;
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
@@ -338,7 +337,7 @@ p {
 }
 
 .gallery-image5 {
-    width: 420px;
+    width: 415px;
     height: 400px;
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
@@ -346,7 +345,7 @@ p {
 }
 
 .gallery-image6 {
-    width: 420px;
+    width: 415px;
     height: 400px;
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
@@ -354,7 +353,7 @@ p {
 }
 
 .gallery-image7 {
-    width: 420px;
+    min-width: 415px;
     height: 400px;
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
