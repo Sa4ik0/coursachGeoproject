@@ -14,6 +14,16 @@ highlightArea.style.width = `${initialSize}px`;
 highlightArea.style.height = `${initialSize}px`;
 sliderValue.textContent = initialValue;
 
+window.addEventListener('load', function() {
+    // Когда весь контент страницы загружен, скройте черно-белый процесс загрузки
+    let loading = document.getElementById('loading');
+    loading.style.display = 'none';
+  
+    // Делаем содержимое страницы видимым
+    let content = document.getElementById('content');
+    content.style.display = 'block';
+});
+
 const openModal = () => {
     document.body.style.overflow = 'hidden';
     calculatorModal.style.display = 'block';
