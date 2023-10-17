@@ -7,16 +7,8 @@
     box-sizing: border-box;
 }
 
-
-element.style {
-}
-
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
     bottom: var(--swiper-pagination-bottom,2px);
-}
-
-body {
-    background: #84A98C;
 }
 
 ::-webkit-scrollbar {
@@ -408,7 +400,7 @@ p {
 }
 
 .calculator-title {
-    max-width: 550px;
+    max-width: 100%;
     height: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -455,6 +447,12 @@ p {
     padding: 0;
     max-width: 100%;
     position: relative;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Safari */
+    -khtml-user-select: none;    /* Konqueror HTML */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
 }
 
 .slider-wrapper p{
@@ -477,26 +475,24 @@ p {
 .calculator-btn {
     box-sizing: border-box;
     width: min-content;
-    height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 15px 15px 15px 15px;
-    background-color: #52796f;
+    background-color: black;
     overflow: visible;
     align-content: center;
     flex-wrap: nowrap;
-    gap: 10;
     border-radius: 8px;
-    width: auto;
+    width: 32%;
     height: auto;
     white-space: pre;
     font-weight: 700;
     font-style: normal;
     font-family: "Martian Mono", monospace;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 32px;
     letter-spacing: 0em;
     line-height: 1.2;
     text-align: center;
@@ -530,10 +526,6 @@ p {
     line-height: 1.2;
     text-align: center;
     border: none;
-}
-
-footer {
-    background-color: #84A98C;
 }
 
 .footer-text {
@@ -794,16 +786,33 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px;
+    padding: 50px;
+    align-items: center;
+    background-color: #000000;
+    border-radius: 20px;
+}
+
+.material-symbols-rounded:not(:nth-child(2)) {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Safari */
+    -khtml-user-select: none;    /* Konqueror HTML */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+
+.calc-reason span {
+    font-size: 82px;
+    color: white;
 }
 
 .calc-reason h1 {
-    text-align: justify;
+    text-align: center;
     width: 100%;
     font-weight: 400;
     font-style: normal;
     font-family: "Orelega One", sans-serif;
-    color: #354f52;
+    color: white;
     font-size: 32px;
     letter-spacing: 0em;
     line-height: 1.2;
@@ -812,6 +821,7 @@ footer {
 .calc-reason p {
     text-align: justify;
     width: 100%;
+    color: white;
 }
 
 .swiper {
@@ -825,22 +835,46 @@ footer {
     font-size: 18px;
     background: #fff;
     display: flex !important;
-    gap: 20px;
-    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px 40px 20px;
     border-radius: 20px;
+    background-color: black;
+    height: 570px !important;
 }
 
 .swiper-slide img {
     display: block;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 5px;
+    border-radius: 50%;
+    border: 5px solid white;
+    image-rendering: optimizeQuality;
+}
+
+.swiper-slide span {
+    font-size: 62px;
+    color: white;
+}
+
+.review-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-text h4{
+    text-align: center !important;
+    color: white;
 }
 
 .review-text p{
     font-size: 14px;
     text-align: justify;
+    color: white;
 }
 
 .reviews {

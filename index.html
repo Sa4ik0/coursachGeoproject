@@ -6,10 +6,11 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="./style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./script.js" defer></script>
@@ -80,10 +81,10 @@
     <div class="white">
         <header>
             <div class="header_menu title-anim" id="head">
-                <p class="logo">ГЕОПРОЕКТ</p>
+                <p class="logo"><a href="./index.html">ГЕОПРОЕКТ</a></p>
                 <ul class="menu">
                     <li class="menu_item"><a href="#info">Почему мы?</a></li>
-                    <li class="menu_item">Отзывы</li>
+                    <li class="menu_item"><a href="#reviews">Отзывы</a></li>
                     <li class="menu_item"><a href="#calculator">Калькулятор</a></li>
                 </ul>
             </div>
@@ -138,43 +139,40 @@
             </div>
         </div>
     </div>
-    <div class="reviews">
-        <h1>Отзывы</h1>
+    <div class="reviews" id="reviews">
+        <h1 class="title-anim">Отзывы</h1>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide title-anim">
+              <div class="swiper-slide title-anim" id="review1">
+                <span class="material-symbols-outlined">reviews</span>
                 <img src="./images/gallery4.jpg" alt="" class="review-img">
                 <div class="review-text">
                     <h4>Жора</h4>
-                    <p>Классная компания, я купил много всего и мне ваще все понравилось!</p>
+                    <p>Взаимодействие с компанией "ГЕОПРОЕКТ" оставило только положительные впечатления. Их команда геодезистов проявила высокий профессионализм, выполнив все работы быстро и точно. Ценообразование абсолютно прозрачное, без скрытых платежей или неожиданных сюрпризов. Рад видеть, что на рынке еще есть компании, которым можно доверять. От всего сердца рекомендую "ГЕОПРОЕКТ"!</p>
                 </div>
               </div>
-              <div class="swiper-slide title-anim">
+              <div class="swiper-slide title-anim" id="review2">
+                <span class="material-symbols-outlined">reviews</span>
                 <img src="./images/gallery4.jpg" alt="" class="review-img">
                 <div class="review-text">
                     <h4>Жора</h4>
-                    <p>Классная компания, я купил много всего и мне ваще все понравилось!</p>
+                    <p>Взаимодействие с компанией "ГЕОПРОЕКТ" оставило только положительные впечатления. Их команда геодезистов проявила высокий профессионализм, выполнив все работы быстро и точно. Ценообразование абсолютно прозрачное, без скрытых платежей или неожиданных сюрпризов. Рад видеть, что на рынке еще есть компании, которым можно доверять. От всего сердца рекомендую "ГЕОПРОЕКТ"!</p>
                 </div>
               </div>
-              <div class="swiper-slide title-anim">
+              <div class="swiper-slide title-anim" id="review3">
+                <span class="material-symbols-outlined">reviews</span>
                 <img src="./images/gallery4.jpg" alt="" class="review-img">
                 <div class="review-text">
                     <h4>Жора</h4>
-                    <p>Классная компания, я купил много всего и мне ваще все понравилось!</p>
+                    <p>Взаимодействие с компанией "ГЕОПРОЕКТ" оставило только положительные впечатления. Их команда геодезистов проявила высокий профессионализм, выполнив все работы быстро и точно. Ценообразование абсолютно прозрачное, без скрытых платежей или неожиданных сюрпризов. Рад видеть, что на рынке еще есть компании, которым можно доверять. От всего сердца рекомендую "ГЕОПРОЕКТ"!</p>
                 </div>
               </div>
-              <div class="swiper-slide title-anim">
+              <div class="swiper-slide">
+                <span class="material-symbols-outlined">reviews</span>
                 <img src="./images/gallery4.jpg" alt="" class="review-img">
                 <div class="review-text">
                     <h4>Жора</h4>
-                    <p>Классная компания, я купил много всего и мне ваще все понравилось!</p>
-                </div>
-              </div>
-              <div class="swiper-slide title-anim">
-                <img src="./images/gallery4.jpg" alt="" class="review-img">
-                <div class="review-text">
-                    <h4>Жора</h4>
-                    <p>Классная компания, я купил много всего и мне ваще все понравилось!</p>
+                    <p>Взаимодействие с компанией "ГЕОПРОЕКТ" оставило только положительные впечатления. Их команда геодезистов проявила высокий профессионализм, выполнив все работы быстро и точно. Ценообразование абсолютно прозрачное, без скрытых платежей или неожиданных сюрпризов. Рад видеть, что на рынке еще есть компании, которым можно доверять. От всего сердца рекомендую "ГЕОПРОЕКТ"!</p>
                 </div>
               </div>
             </div>
@@ -182,18 +180,21 @@
           </div>
     </div>
     <div class="calculator" id="calculator">
-        <h1 class="calculator-title title-anim">Поробуйте калькулятор!</h1>
+        <h1 class="calculator-title title-anim" id="try-calc">Попробуйте калькулятор!</h1>
         <div class="reasons-to-use">
-            <div class="calc-reason">
-                <h1>1. Точная оценка затрат</h1>
+            <div class="calc-reason title-anim" id="1reason">
+                <span class="material-symbols-outlined">payments</span>
+                <h1>Точная оценка затрат</h1>
                 <p>Калькулятор позволяет клиентам получить быструю и точную оценку стоимости геодезических услуг, исключая необходимость обращения за индивидуальным расчетом. Это упрощает процесс принятия решения и позволяет клиентам более ясно понимать финансовые обязательства.</p>
             </div>
-            <div class="calc-reason">
-                <h1>2. Эффективность времени</h1>
+            <div class="calc-reason title-anim" id="2reason">
+                <span class="material-symbols-outlined">schedule</span>
+                <h1>Эффективность времени</h1>
                 <p>Клиенты могут мгновенно получить стоимость заказа, используя калькулятор, без необходимости звонить или отправлять запросы на расчет. Это сэкономит как клиентам, так и вашей компании время и ресурсы.</p>
             </div>
-            <div class="calc-reason">
-                <h1>3. Прозрачность и уверенность</h1>
+            <div class="calc-reason title-anim" id="3reason">
+                <span class="material-symbols-outlined">crop_free</span>
+                <h1>Прозрачность</h1>
                 <p>Калькулятор позволяет клиентам легко сравнивать стоимость различных услуг или опций, что способствует прозрачности в процессе принятия решения. Когда клиент видит ясные цифры, это может увеличить их уверенность в выборе вашей компании для предоставления геодезических услуг.</p>
             </div>
         </div>

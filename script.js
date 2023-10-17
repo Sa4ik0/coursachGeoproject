@@ -204,24 +204,56 @@ entry.forEach(change => {
     } else if (change.target.id == 'image2' && change.isIntersecting) {
         change.target.classList.add('animate__animated');
         change.target.classList.add('animate__fadeInDown');
-    }  else if (change.target.id == 'image3' && change.isIntersecting) {
+    } else if (change.target.id == 'image3' && change.isIntersecting) {
         setTimeout(() => { 
             change.target.classList.add('animate__animated');
             change.target.classList.add('animate__fadeInDown');
         },200);
-    }  else if (change.target.id == 'image4' && change.isIntersecting) {
+    } else if (change.target.id == 'image4' && change.isIntersecting) {
         setTimeout(() => { 
             change.target.classList.add('animate__animated');
             change.target.classList.add('animate__fadeInDown');
         },400);;
-    }  else if (change.target.id == 'image5' && change.isIntersecting) {
+    } else if (change.target.id == 'image5' && change.isIntersecting) {
         setTimeout(() => { 
             change.target.classList.add('animate__animated');
             change.target.classList.add('animate__fadeInDown');
         },600);
+    } else if (change.target.id == 'review1' && change.isIntersecting) {
+        setTimeout(() => { 
+            change.target.classList.add('animate__animated');
+            change.target.classList.add('animate__fadeInUp');
+        },200);
+    } else if (change.target.id == 'review2' && change.isIntersecting) {
+        setTimeout(() => { 
+            change.target.classList.add('animate__animated');
+            change.target.classList.add('animate__fadeInUp');
+        },400);;
+    } else if (change.target.id == 'review3' && change.isIntersecting) {
+        setTimeout(() => { 
+            change.target.classList.add('animate__animated');
+            change.target.classList.add('animate__fadeInUp');
+        },600);
     } else if (change.target.id == 'calc-text' && change.isIntersecting) {
         change.target.classList.add('animate__animated');
         change.target.classList.add('animate__fadeInLeft');
+    } else if (change.target.id == 'review' && change.isIntersecting) {
+        change.target.classList.add('animate__animated');
+        change.target.classList.add('animate__fadeInRight');
+    } else if (change.target.id == '1reason' && change.isIntersecting) {
+        change.target.classList.add('animate__animated');
+        change.target.classList.add('animate__fadeInLeft');
+    } else if (change.target.id == '2reason' && change.isIntersecting) {
+        setTimeout(() => { 
+            change.target.classList.add('animate__animated');
+            change.target.classList.add('animate__fadeIn');
+        },50);
+    } else if (change.target.id == '3reason' && change.isIntersecting) {
+        change.target.classList.add('animate__animated');
+        change.target.classList.add('animate__fadeInRight');
+    } else if (change.target.id == 'try-calc' && change.isIntersecting) {
+        change.target.classList.add('animate__animated');
+        change.target.classList.add('animate__fadeInDown');
     } else if (change.target.id == 'calc-btn' && change.isIntersecting) {
         change.target.classList.add('animate__animated');
         change.target.classList.add('animate__fadeInUp');
@@ -244,13 +276,23 @@ for (let elm of elements) {
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 30,
-    speed: 600,
+    speed: 500,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
     },
     autoplay: {
-        delay: 2500,
+        delay: 5000,
         disableOnInteraction: false,
       },
   });
+
+// динамическая ширина блока
+
+const setDynamicWidth = () => {
+    const calcBtnDynamicBlock = document.querySelector('.calc-reason').offsetWidth;
+    document.querySelector('.calculator-btn').style.width = calcBtnDynamicBlock + 'px';
+}
+
+// Устанавливаем ширину при загрузке страницы
+setDynamicWidth();
