@@ -240,3 +240,12 @@ let elements = document.querySelectorAll('.title-anim');
 for (let elm of elements) {
     observer.observe(elm);
 }
+
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
