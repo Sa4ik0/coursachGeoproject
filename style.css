@@ -7,6 +7,14 @@
     box-sizing: border-box;
 }
 
+
+element.style {
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: var(--swiper-pagination-bottom,2px);
+}
+
 body {
     background: #84A98C;
 }
