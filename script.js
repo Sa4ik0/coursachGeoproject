@@ -47,6 +47,54 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdownBtn = document.querySelector('.dropdown-btn');
     const dropdownContent = document.querySelector('.dropdown-content');
     const complexityOptions = document.querySelectorAll('.dropdown-content a');
+    const w = window.innerWidth;
+
+    if (w > 1750) {
+        swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        speed: 500,
+        grabCursor: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+            delay: 20000,
+            disableOnInteraction: false,
+        },
+    });
+    } else if (w < 1750 && w > 1200) {
+            swiper = new Swiper(".mySwiper", {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            speed: 500,
+            grabCursor: true,
+            pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            },
+            autoplay: {
+                delay: 20000,
+                disableOnInteraction: false,
+            },
+        });
+    } else if (w < 1200) {
+        let swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            speed: 500,
+            grabCursor: true,
+            pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            },
+            autoplay: {
+                delay: 20000,
+                disableOnInteraction: false,
+            },
+        });
+    }
 
     dropdownBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -256,6 +304,57 @@ let swiper = new Swiper(".mySwiper", {
         disableOnInteraction: false,
     },
 });
+
+window.addEventListener('resize', () => {
+    let w = window.innerWidth;
+    console.log(w);
+    if (w > 1750) {
+            swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            speed: 500,
+            grabCursor: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            autoplay: {
+                delay: 20000,
+                disableOnInteraction: false,
+            },
+        });
+    } else if (w < 1750 && w > 1200) {
+            swiper = new Swiper(".mySwiper", {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            speed: 500,
+            grabCursor: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            autoplay: {
+                delay: 20000,
+                disableOnInteraction: false,
+            },
+        });
+    } else if (w < 1200) {
+        let swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            speed: 500,
+            grabCursor: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            autoplay: {
+                delay: 20000,
+                disableOnInteraction: false,
+            },
+        });
+    }
+})
 
 let swiper2 = new Swiper(".mySwiper2", {
     effect: "cards",
