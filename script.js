@@ -14,14 +14,6 @@ highlightArea.style.width = `${initialSize}px`;
 highlightArea.style.height = `${initialSize}px`;
 sliderValue.textContent = initialValue;
 
-window.addEventListener('load', function() {
-    let loading = document.getElementById('loading');
-    loading.style.display = 'none';
-  
-    let content = document.getElementById('content');
-    content.style.display = 'block';
-});
-
 const openModal = () => {
     document.body.style.overflow = 'hidden';
     calculatorModal.style.display = 'block';
@@ -73,6 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
             calculate();
         });
     });
+
+    let loading = document.getElementById('loading');
+    loading.style.display = 'none';
+  
+    let content = document.getElementById('content');
+    content.style.display = 'block';
 });
 
 const calculate = () => {
@@ -126,41 +124,41 @@ idOrderElement.textContent = `ID-Заказа: ${randomId}`;
 
 calculate();
 
-const carousel = document.querySelector(".bottom-images");
-const firstImg = document.querySelector(".bottom-images img");
-const arrowIcons = document.querySelectorAll(".slider-wrapper p");
+// const carousel = document.querySelector(".bottom-images");
+// const firstImg = document.querySelector(".bottom-images img");
+// const arrowIcons = document.querySelectorAll(".slider-wrapper p");
 
-let isDragStart = false, prevPageX, prevScrollLeft;
-let firstImgWidth = firstImg.clientWidth + 20;
+// let isDragStart = false, prevPageX, prevScrollLeft;
+// let firstImgWidth = firstImg.clientWidth + 20;
 
-arrowIcons.forEach((icon) => {
-    icon.addEventListener('click', () => {
-        carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
-    });
-});
+// arrowIcons.forEach((icon) => {
+//     icon.addEventListener('click', () => {
+//         carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+//     });
+// });
 
-const dragStart = (e) => {
-    isDragStart = true;
-    prevPageX = e.pageX;
-    prevScrollLeft = carousel.scrollLeft;
-};
+// const dragStart = (e) => {
+//     isDragStart = true;
+//     prevPageX = e.pageX;
+//     prevScrollLeft = carousel.scrollLeft;
+// };
 
-const dragging = (e) => { 
-    if (!isDragStart) return;
-    e.preventDefault();
-    carousel.classList.add("dragging");
-    let positionDiff = e.pageX - prevPageX;
-    carousel.scrollLeft = prevScrollLeft - positionDiff;
-};
+// const dragging = (e) => { 
+//     if (!isDragStart) return;
+//     e.preventDefault();
+//     carousel.classList.add("dragging");
+//     let positionDiff = e.pageX - prevPageX;
+//     carousel.scrollLeft = prevScrollLeft - positionDiff;
+// };
 
-const dragStop = () => {
-    isDragStart = false;
-    carousel.classList.remove("dragging");
-};
+// const dragStop = () => {
+//     isDragStart = false;
+//     carousel.classList.remove("dragging");
+// };
 
-carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("mousemove", dragging);
-carousel.addEventListener("mouseup", dragStop);
+// carousel.addEventListener("mousedown", dragStart);
+// carousel.addEventListener("mousemove", dragging);
+// carousel.addEventListener("mouseup", dragStop);
 
 function onEntry(entry) {
     entry.forEach((change) => {
@@ -244,10 +242,11 @@ for (let elm of elements) {
     observer.observe(elm);
 }
 
-var swiper = new Swiper(".mySwiper", {
+let swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 30,
     speed: 500,
+    grabCursor: true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -255,8 +254,13 @@ var swiper = new Swiper(".mySwiper", {
     autoplay: {
         delay: 20000,
         disableOnInteraction: false,
-      },
-  });
+    },
+});
+
+let swiper2 = new Swiper(".mySwiper2", {
+    effect: "cards",
+    grabCursor: true,
+});
 
 const setDynamicWidth = () => {
     const calcBtnDynamicBlock = document.querySelector('.calc-reason').offsetWidth;
