@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdownContent = document.querySelector('.dropdown-content');
     const complexityOptions = document.querySelectorAll('.dropdown-content a');
     const w = window.innerWidth;
-
+    
     if (w > 1750) {
         swiper = new Swiper(".mySwiper", {
         slidesPerView: 3,
@@ -80,6 +80,21 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         });
     } else if (w < 1200) {
+        let swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            speed: 500,
+            grabCursor: true,
+            pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            },
+            autoplay: {
+                delay: 20000,
+                disableOnInteraction: false,
+            },
+        });
+    } else if (w > 1920) {
         let swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
             spaceBetween: 30,

@@ -1208,12 +1208,16 @@ p {
         font-size: 46px;
     }
 
+    .swiper2 {
+        width: 80%;
+    }
+
     .left-text {
         font-size: 24px;
     }
 
     .left {
-        max-width: 600px;
+        max-width: 100%;
     }
 
     .info-image {
@@ -1226,7 +1230,7 @@ p {
 
     main {
         flex-direction: column;
-        padding: 350px;
+        padding: 100px;
         padding-top: 100px;
         padding-bottom: 100px;
     }
@@ -1246,6 +1250,10 @@ p {
     .calculator-btn {
         font-size: 24px;
     }
+
+    .left {
+        max-width: 70%;
+    }
 }
 
 @media screen and (min-width: 2500px) {
@@ -1255,10 +1263,6 @@ p {
 
     .left-text {
         font-size: 28px;
-    }
-
-    .left {
-        max-width: 650px;
     }
 
     .info-image {
@@ -1271,7 +1275,7 @@ p {
 
     main {
         flex-direction: column;
-        padding: 350px;
+        padding: 100px;
         padding-top: 100px;
         padding-bottom: 100px;
     }
