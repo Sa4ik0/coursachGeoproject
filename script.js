@@ -377,7 +377,7 @@ let swiper2 = new Swiper(".mySwiper2", {
 });
 
 const setDynamicWidth = () => {
-    const calcBtnDynamicBlock = document.querySelector('.calc-reason').offsetWidth;
+    const calcBtnDynamicBlock = document.getElementById('.3reason').offsetWidth;
     document.querySelector('.calculator-btn').style.width = calcBtnDynamicBlock + 'px';
 };
 
