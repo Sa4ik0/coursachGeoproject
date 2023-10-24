@@ -58,11 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
-        },
-        autoplay: {
-            delay: 20000,
-            disableOnInteraction: false,
-        },
+        }
     });
     } else if (w < 1750 && w > 1200) {
             swiper = new Swiper(".mySwiper", {
@@ -73,14 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
             pagination: {
             el: ".swiper-pagination",
             clickable: true,
-            },
-            autoplay: {
-                delay: 20000,
-                disableOnInteraction: false,
-            },
+            }
         });
     } else if (w < 1200) {
-        let swiper = new Swiper(".mySwiper", {
+            swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
             spaceBetween: 30,
             speed: 500,
@@ -88,11 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pagination: {
             el: ".swiper-pagination",
             clickable: true,
-            },
-            autoplay: {
-                delay: 20000,
-                disableOnInteraction: false,
-            },
+            }
         });
     } else if (w > 1920) {
         let swiper = new Swiper(".mySwiper", {
@@ -103,11 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pagination: {
             el: ".swiper-pagination",
             clickable: true,
-            },
-            autoplay: {
-                delay: 20000,
-                disableOnInteraction: false,
-            },
+            }
         });
     }
 
@@ -313,14 +297,16 @@ let swiper = new Swiper(".mySwiper", {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
-    },
-    autoplay: {
-        delay: 20000,
-        disableOnInteraction: false,
-    },
+    }
 });
 
-window.addEventListener('resize', () => {
+const setDynamicWidth = () => {
+    const calcBtnDynamicBlock = document.getElementById('3reason').offsetWidth;
+    document.querySelector('.calculator-btn').style.width = calcBtnDynamicBlock + 'px';
+};
+
+window.addEventListener('resize', () => {  
+    setDynamicWidth();
     let w = window.innerWidth;
     console.log(w);
     if (w > 1750) {
@@ -332,11 +318,7 @@ window.addEventListener('resize', () => {
             pagination: {
               el: ".swiper-pagination",
               clickable: true,
-            },
-            autoplay: {
-                delay: 20000,
-                disableOnInteraction: false,
-            },
+            }
         });
     } else if (w < 1750 && w > 1200) {
             swiper = new Swiper(".mySwiper", {
@@ -347,14 +329,10 @@ window.addEventListener('resize', () => {
             pagination: {
               el: ".swiper-pagination",
               clickable: true,
-            },
-            autoplay: {
-                delay: 20000,
-                disableOnInteraction: false,
-            },
+            }
         });
     } else if (w < 1200) {
-        let swiper = new Swiper(".mySwiper", {
+        swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
             spaceBetween: 30,
             speed: 500,
@@ -362,11 +340,7 @@ window.addEventListener('resize', () => {
             pagination: {
               el: ".swiper-pagination",
               clickable: true,
-            },
-            autoplay: {
-                delay: 20000,
-                disableOnInteraction: false,
-            },
+            }
         });
     }
 })
@@ -375,10 +349,3 @@ let swiper2 = new Swiper(".mySwiper2", {
     effect: "cards",
     grabCursor: true,
 });
-
-const setDynamicWidth = () => {
-    const calcBtnDynamicBlock = document.getElementById('.3reason').offsetWidth;
-    document.querySelector('.calculator-btn').style.width = calcBtnDynamicBlock + 'px';
-};
-
-setDynamicWidth();

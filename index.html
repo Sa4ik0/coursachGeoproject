@@ -26,207 +26,206 @@
         </div>
     </div>
     <div id="content" style="display: none;">
-    <!-- Здесь разместите содержимое вашей страницы -->
-    </div>
-    <div class="modal-background" id="modal-background"></div>
-    <div class="calculatorForm" id="calculatorModal">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-            <p class="modal-header-title">КАЛЬКУЛЯТОР</p>
-        </div>
-        <form class="modalWrapper">
-            <div class="functions">
-                <div class="slider-container">
-                    <p class="slider-p">Площадь территории</p>
-                    <input type="range" id="slider" min="100" max="10000" value="100" step="1">
-                    <div class="slider-range">
-                        <p id="slider-value">100</p>
-                        <p class="slider-value-units">м²</p>
+        <div class="modal-background" id="modal-background"></div>
+        <div class="calculatorForm" id="calculatorModal">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <p class="modal-header-title">КАЛЬКУЛЯТОР</p>
+            </div>
+            <form class="modalWrapper">
+                <div class="functions">
+                    <div class="slider-container">
+                        <p class="slider-p">Площадь территории</p>
+                        <input type="range" id="slider" min="100" max="10000" value="100" step="1">
+                        <div class="slider-range">
+                            <p id="slider-value">100</p>
+                            <p class="slider-value-units">м²</p>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropdown-btn">Выберите сложность</button>
+                        <ul class="dropdown-content">
+                            <li><a href="#" id="1">Высотные измерения +15%</a></li>
+                            <li><a href="#" id="2">Горная местность +25%</a></li>
+                            <li><a href="#" id="3">Болото +20%</a></li>
+                            <li><a href="#" id="4">Канавы +10%</a></li>
+                            <li><a href="#" id="5">Без сложностей</a></li>
+                        </ul>
+                    </div>
+                    <div class="map">
+                        <img src="./images/map_ravnina.png" alt="Карта" class="map-image" id="map-image" width="450px" height="450px">
+                        <div class="highlight-area" id="highlight-area"></div>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <button class="dropdown-btn">Выберите сложность</button>
-                    <ul class="dropdown-content">
-                        <li><a href="#" id="1">Высотные измерения +15%</a></li>
-                        <li><a href="#" id="2">Горная местность +25%</a></li>
-                        <li><a href="#" id="3">Болото +20%</a></li>
-                        <li><a href="#" id="4">Канавы +10%</a></li>
-                        <li><a href="#" id="5">Без сложностей</a></li>
+                <div class="results">
+                    <div class="order-info">
+                        <p class="baseCost" id="baseCost"></p>
+                        <p class="result" id="result"></p>
+                        <p class="id-order" id="id-order"></p>
+                    </div>
+                    <div class="inputs">
+                        <div class="input-wrapper">
+                            <label for="">Номер телефона:</label>
+                            <input type="tel" name="" id="tel">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="">Фамилия:</label>
+                            <input type="text" name="" id="surname">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="">Имя:</label>
+                            <input type="text" name="" id="name">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="">Отчество:</label>
+                            <input type="text" name="" id="lastname">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="">Город:</label>
+                            <input type="text" name="" id="town">
+                        </div>
+                        <input type="submit" value="Сделать заказ" class="calculator-btn-submit">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="white">
+            <header>
+                <div class="header_menu title-anim" id="head">
+                    <p class="logo"><a href="./index.html">ГЕОПРОЕКТ</a></p>
+                    <ul class="menu">
+                        <li class="menu_item"><a href="#info">Почему мы?</a></li>
+                        <li class="menu_item"><a href="#reviews">Отзывы</a></li>
+                        <li class="menu_item"><a href="#calculator">Калькулятор</a></li>
                     </ul>
                 </div>
-                <div class="map">
-                    <img src="./images/map_ravnina.png" alt="Карта" class="map-image" id="map-image" width="450px" height="450px">
-                    <div class="highlight-area" id="highlight-area"></div>
+                <div class="present">
+                    <span class="material-symbols-rounded present_engineer animate__animated animate__fadeInLeft">engineering</span>
+                    <h1 class="material-symbols-rounded present_text animate__animated animate__fadeInDown">GEOPROJECT</h1>
+                    <span class="material-symbols-rounded present_terrain animate__animated animate__fadeInRight">settings</span>
                 </div>
-            </div>
-            <div class="results">
-                <div class="order-info">
-                    <p class="baseCost" id="baseCost"></p>
-                    <p class="result" id="result"></p>
-                    <p class="id-order" id="id-order"></p>
-                </div>
-                <div class="inputs">
-                    <div class="input-wrapper">
-                        <label for="">Номер телефона:</label>
-                        <input type="tel" name="" id="tel">
+            </header>
+            <main>
+                <div class="info title-anim" id="info">
+                    <div class="info-image"></div>
+                    <div class="left">
+                        <h4 class="left-title">Ваш надежный партнер по комплексным решениям в области геодезии</h4>
+                        <p class="left-text">Точность, аккуратность и компетентность - все это предлагаем мы! Благодаря большому опыту работы в различных отраслях промышленности мы гарантируем исключительное качество геодезических услуг, отвечающее вашим потребностям. Наш опыт и профессиональная команда обеспечивают точные измерения и анализ местности, необходимые для различных проектов. Мы специализируемся на земельных изысканиях, топографических съемках и инженерной геодезии. Наше оборудование на передовой технологии, и мы гарантируем надежность и высокое качество наших услуг. В сотрудничестве с нами вы можете быть уверены, что ваш проект будет успешно завершен с учетом всех геодезических аспектов.</p>
                     </div>
-                    <div class="input-wrapper">
-                        <label for="">Фамилия:</label>
-                        <input type="text" name="" id="surname">
+                </div>
+                <div class="info title-anim title-anim-sec" id="sec-anim">
+                    <div class="info-image"></div>
+                    <div class="left">
+                        <h4 class="left-title">Раскройте потенциал точных данных для принятия более эффективных решений</h4>
+                        <p class="left-text">Наши передовые технологии и современное оборудование превращают необработанные данные в ценные сведения для ваших проектов. Позвольте точным данным максимально раскрыть свой потенциал. Наши геодезические работы обеспечивают вас надежными измерениями и высокоточными картами местности. Эти данные - ключ к эффективным строительным, инженерным и земельным решениям. От точных топографических съемок до инженерной геодезии, мы обеспечиваем необходимую информацию для успешных проектов. Ваш успех зависит от точности, и мы готовы помочь вам добиться её.</p>
                     </div>
-                    <div class="input-wrapper">
-                        <label for="">Имя:</label>
-                        <input type="text" name="" id="name">
-                    </div>
-                    <div class="input-wrapper">
-                        <label for="">Отчество:</label>
-                        <input type="text" name="" id="lastname">
-                    </div>
-                    <div class="input-wrapper">
-                        <label for="">Город:</label>
-                        <input type="text" name="" id="town">
-                    </div>
-                    <input type="submit" value="Сделать заказ" class="calculator-btn-submit">
                 </div>
-            </div>
-        </form>
-    </div>
-    <div class="white">
-        <header>
-            <div class="header_menu title-anim" id="head">
-                <p class="logo"><a href="./index.html">ГЕОПРОЕКТ</a></p>
-                <ul class="menu">
-                    <li class="menu_item"><a href="#info">Почему мы?</a></li>
-                    <li class="menu_item"><a href="#reviews">Отзывы</a></li>
-                    <li class="menu_item"><a href="#calculator">Калькулятор</a></li>
-                </ul>
-            </div>
-            <div class="present">
-                <span class="material-symbols-rounded present_engineer animate__animated animate__fadeInLeft">engineering</span>
-                <h1 class="material-symbols-rounded present_text animate__animated animate__fadeInDown">GEOPROJECT</h1>
-                <span class="material-symbols-rounded present_terrain animate__animated animate__fadeInRight">settings</span>
-            </div>
-        </header>
-        <main>
-            <div class="info title-anim" id="info">
-                <div class="info-image"></div>
-                <div class="left">
-                    <h4 class="left-title">Ваш надежный партнер по комплексным решениям в области геодезии</h4>
-                    <p class="left-text">Точность, аккуратность и компетентность - все это предлагаем мы! Благодаря большому опыту работы в различных отраслях промышленности мы гарантируем исключительное качество геодезических услуг, отвечающее вашим потребностям. Наш опыт и профессиональная команда обеспечивают точные измерения и анализ местности, необходимые для различных проектов. Мы специализируемся на земельных изысканиях, топографических съемках и инженерной геодезии. Наше оборудование на передовой технологии, и мы гарантируем надежность и высокое качество наших услуг. В сотрудничестве с нами вы можете быть уверены, что ваш проект будет успешно завершен с учетом всех геодезических аспектов.</p>
-                </div>
-            </div>
-            <div class="info title-anim title-anim-sec" id="sec-anim">
-                <div class="info-image"></div>
-                <div class="left">
-                    <h4 class="left-title">Раскройте потенциал точных данных для принятия более эффективных решений</h4>
-                    <p class="left-text">Наши передовые технологии и современное оборудование превращают необработанные данные в ценные сведения для ваших проектов. Позвольте точным данным максимально раскрыть свой потенциал. Наши геодезические работы обеспечивают вас надежными измерениями и высокоточными картами местности. Эти данные - ключ к эффективным строительным, инженерным и земельным решениям. От точных топографических съемок до инженерной геодезии, мы обеспечиваем необходимую информацию для успешных проектов. Ваш успех зависит от точности, и мы готовы помочь вам добиться её.</p>
-                </div>
-            </div>
-        </main>
-    </div>
-    <div class="gallery">
-        <h1 class="gallery-title title-anim" id="gallery">Что делает нашу экспертизу непревзойденной?</h1>
-        <div class="gallery-images">
-            <div class="top-image title-anim" id="gallery">
-                    <li class="exp-text">Опыт и навыки:</li>
-                        <p class="exp-desc">Наши геодезисты обладают глубокими знаниями и богатым опытом в области земельного и инженерного измерения. Мы предоставляем точные и надежные данные, которые вы можете использовать в любом проекте.</p>
-                    <li class="exp-text">Современное оборудование:</li>
-                        <p class="exp-desc">Мы вкладываем средства в самые передовые технологии и геодезическое оборудование, чтобы обеспечивать наши клиенты наилучшими решениями.</p>
-                    <li class="exp-text">Персонализированный подход:</li>
-                        <p class="exp-desc">Мы понимаем, что каждый проект уникален. Мы работаем с вами, чтобы разработать индивидуальное решение, которое соответствует вашим потребностям и бюджету.</p>
-                    <li class="exp-text">Надежность и точность:</li>
-                        <p class="exp-desc">Наша цель - обеспечить вас точными данными и результатами, которые можно доверять. Мы стремимся к 100% удовлетворенности клиентов.</p>
-                        <p class="exp-desc">Независимо от того, нужны ли вам геодезические измерения для строительства, земельного участка, геодезической карты или других проектов, Геопроект всегда готов помочь вам достичь ваших целей. Доверьте нам ваш проект, и мы позаботимся о нем, как о собственном.</p>
-            </div>
-            <div class="swiper2 mySwiper2">
-                <div class="swiper-wrapper sec-swiper-wrapper">
-                  <div class="swiper-slide sec-slide"></div>
-                  <div class="swiper-slide sec-slide"></div>
-                  <div class="swiper-slide sec-slide"></div>
-                  <div class="swiper-slide sec-slide"></div>
-                  <div class="swiper-slide sec-slide"></div>
-                  <div class="swiper-slide sec-slide"></div>
-                  <div class="swiper-slide sec-slide"></div>
-                </div>
-            </div>
-            <!-- <div class="slider-wrapper">
-                <p id="left">Влево</p>
-                <div class="bottom-images">
-                    <img class="gallery-image2 title-anim" src="./images/gallery2.jpg" id="image2">
-                    <img class="gallery-image3 title-anim" src="./images/gallery3.jpg" id="image3">
-                    <img class="gallery-image4 title-anim" src="./images/gallery4.jpg" id="image4">
-                    <img class="gallery-image5 title-anim" src="./images/gallery5.jpg" id="image5">
-                    <img class="gallery-image6 title-anim" src="./images/gallery6.jpg" id="image6">
-                    <img class="gallery-image7 title-anim" src="./images/gallery7.jpg" id="image7">
-                </div>
-                <p id="right">Вправо</p>
-            </div> -->
+            </main>
         </div>
-    </div>
-    <div class="reviews" id="reviews">
-        <h1 class="title-anim">Отзывы</h1>
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide title-anim" id="review1">
-                <span class="material-symbols-outlined">reviews</span>
-                <img src="./images/gallery4.jpg" alt="" class="review-img">
-                <div class="review-text">
-                    <h4>Жора</h4>
-                    <p>Взаимодействие с компанией "ГЕОПРОЕКТ" оставило только положительные впечатления. Их команда геодезистов проявила высокий профессионализм, выполнив все работы быстро и точно. Ценообразование абсолютно прозрачное, без скрытых платежей или неожиданных сюрпризов. Рад видеть, что на рынке еще есть компании, которым можно доверять. От всего сердца рекомендую "ГЕОПРОЕКТ"!</p>
+        <div class="gallery">
+            <h1 class="gallery-title title-anim" id="gallery">Что делает нашу экспертизу непревзойденной?</h1>
+            <div class="gallery-images">
+                <div class="top-image title-anim" id="gallery">
+                        <li class="exp-text">Опыт и навыки:</li>
+                            <p class="exp-desc">Наши геодезисты обладают глубокими знаниями и богатым опытом в области земельного и инженерного измерения. Мы предоставляем точные и надежные данные, которые вы можете использовать в любом проекте.</p>
+                        <li class="exp-text">Современное оборудование:</li>
+                            <p class="exp-desc">Мы вкладываем средства в самые передовые технологии и геодезическое оборудование, чтобы обеспечивать наши клиенты наилучшими решениями.</p>
+                        <li class="exp-text">Персонализированный подход:</li>
+                            <p class="exp-desc">Мы понимаем, что каждый проект уникален. Мы работаем с вами, чтобы разработать индивидуальное решение, которое соответствует вашим потребностям и бюджету.</p>
+                        <li class="exp-text">Надежность и точность:</li>
+                            <p class="exp-desc">Наша цель - обеспечить вас точными данными и результатами, которые можно доверять. Мы стремимся к 100% удовлетворенности клиентов.</p>
+                            <p class="exp-desc">Независимо от того, нужны ли вам геодезические измерения для строительства, земельного участка, геодезической карты или других проектов, Геопроект всегда готов помочь вам достичь ваших целей. Доверьте нам ваш проект, и мы позаботимся о нем, как о собственном.</p>
                 </div>
-              </div>
-              <div class="swiper-slide title-anim" id="review2">
-                <span class="material-symbols-outlined">reviews</span>
-                <img src="./images/gallery4.jpg" alt="" class="review-img">
-                <div class="review-text">
-                    <h4>Жора</h4>
-                    <p>Взаимодействие с компанией "ГЕОПРОЕКТ" оставило только положительные впечатления. Их команда геодезистов проявила высокий профессионализм, выполнив все работы быстро и точно. Ценообразование абсолютно прозрачное, без скрытых платежей или неожиданных сюрпризов. Рад видеть, что на рынке еще есть компании, которым можно доверять. От всего сердца рекомендую "ГЕОПРОЕКТ"!</p>
+                <div class="swiper2 mySwiper2">
+                    <div class="swiper-wrapper sec-swiper-wrapper">
+                      <div class="swiper-slide sec-slide"></div>
+                      <div class="swiper-slide sec-slide"></div>
+                      <div class="swiper-slide sec-slide"></div>
+                      <div class="swiper-slide sec-slide"></div>
+                      <div class="swiper-slide sec-slide"></div>
+                      <div class="swiper-slide sec-slide"></div>
+                      <div class="swiper-slide sec-slide"></div>
+                    </div>
                 </div>
-              </div>
-              <div class="swiper-slide title-anim" id="review3">
-                <span class="material-symbols-outlined">reviews</span>
-                <img src="./images/gallery4.jpg" alt="" class="review-img">
-                <div class="review-text">
-                    <h4>Жора</h4>
-                    <p>Взаимодействие с компанией "ГЕОПРОЕКТ" оставило только положительные впечатления. Их команда геодезистов проявила высокий профессионализм, выполнив все работы быстро и точно. Ценообразование абсолютно прозрачное, без скрытых платежей или неожиданных сюрпризов. Рад видеть, что на рынке еще есть компании, которым можно доверять. От всего сердца рекомендую "ГЕОПРОЕКТ"!</p>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <span class="material-symbols-outlined">reviews</span>
-                <img src="./images/gallery4.jpg" alt="" class="review-img">
-                <div class="review-text">
-                    <h4>Жора</h4>
-                    <p>Взаимодействие с компанией "ГЕОПРОЕКТ" оставило только положительные впечатления. Их команда геодезистов проявила высокий профессионализм, выполнив все работы быстро и точно. Ценообразование абсолютно прозрачное, без скрытых платежей или неожиданных сюрпризов. Рад видеть, что на рынке еще есть компании, которым можно доверять. От всего сердца рекомендую "ГЕОПРОЕКТ"!</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-    </div>
-    <div class="calculator" id="calculator">
-        <h1 class="calculator-title title-anim" id="try-calc">Попробуйте калькулятор!</h1>
-        <div class="reasons-to-use">
-            <div class="calc-reason title-anim" id="1reason">
-                <span class="material-symbols-outlined">payments</span>
-                <h1>Точная оценка затрат</h1>
-                <p>Калькулятор позволяет клиентам получить быструю и точную оценку стоимости геодезических услуг, исключая необходимость обращения за индивидуальным расчетом. Это упрощает процесс принятия решения и позволяет клиентам более ясно понимать финансовые обязательства.</p>
-            </div>
-            <div class="calc-reason title-anim" id="2reason">
-                <span class="material-symbols-outlined">schedule</span>
-                <h1>Эффективность времени</h1>
-                <p>Клиенты могут мгновенно получить стоимость заказа, используя калькулятор, без необходимости звонить или отправлять запросы на расчет. Это сэкономит как клиентам, так и вашей компании время и ресурсы.</p>
-            </div>
-            <div class="calc-reason title-anim" id="3reason">
-                <span class="material-symbols-outlined">crop_free</span>
-                <h1>Прозрачность</h1>
-                <p>Калькулятор позволяет клиентам легко сравнивать стоимость различных услуг или опций, что способствует прозрачности в процессе принятия решения. Когда клиент видит ясные цифры, это может увеличить их уверенность в выборе вашей компании для предоставления геодезических услуг.</p>
+                <!-- <div class="slider-wrapper">
+                    <p id="left">Влево</p>
+                    <div class="bottom-images">
+                        <img class="gallery-image2 title-anim" src="./images/gallery2.jpg" id="image2">
+                        <img class="gallery-image3 title-anim" src="./images/gallery3.jpg" id="image3">
+                        <img class="gallery-image4 title-anim" src="./images/gallery4.jpg" id="image4">
+                        <img class="gallery-image5 title-anim" src="./images/gallery5.jpg" id="image5">
+                        <img class="gallery-image6 title-anim" src="./images/gallery6.jpg" id="image6">
+                        <img class="gallery-image7 title-anim" src="./images/gallery7.jpg" id="image7">
+                    </div>
+                    <p id="right">Вправо</p>
+                </div> -->
             </div>
         </div>
-        <!-- <button class="order-btn">Сделать заказ</button> -->
-        <button class="calculator-btn openModal title-anim" id="calc-btn">Калькулятор</button>
+        <div class="reviews" id="reviews">
+            <h1 class="title-anim">Отзывы</h1>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide title-anim" id="review1">
+                    <span class="material-symbols-outlined">reviews</span>
+                    <img src="./images/gallery4.jpg" alt="" class="review-img">
+                    <div class="review-text">
+                        <h4>Жора</h4>
+                        <p>Взаимодействие с компанией "ГЕОПРОЕКТ" оставило только положительные впечатления. Их команда геодезистов проявила высокий профессионализм, выполнив все работы быстро и точно. Ценообразование абсолютно прозрачное, без скрытых платежей или неожиданных сюрпризов. Рад видеть, что на рынке еще есть компании, которым можно доверять. От всего сердца рекомендую "ГЕОПРОЕКТ"!</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide title-anim" id="review2">
+                    <span class="material-symbols-outlined">reviews</span>
+                    <img src="./images/gallery4.jpg" alt="" class="review-img">
+                    <div class="review-text">
+                        <h4>Жора</h4>
+                        <p>Взаимодействие с компанией "ГЕОПРОЕКТ" оставило только положительные впечатления. Их команда геодезистов проявила высокий профессионализм, выполнив все работы быстро и точно. Ценообразование абсолютно прозрачное, без скрытых платежей или неожиданных сюрпризов. Рад видеть, что на рынке еще есть компании, которым можно доверять. От всего сердца рекомендую "ГЕОПРОЕКТ"!</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide title-anim" id="review3">
+                    <span class="material-symbols-outlined">reviews</span>
+                    <img src="./images/gallery4.jpg" alt="" class="review-img">
+                    <div class="review-text">
+                        <h4>Жора</h4>
+                        <p>Взаимодействие с компанией "ГЕОПРОЕКТ" оставило только положительные впечатления. Их команда геодезистов проявила высокий профессионализм, выполнив все работы быстро и точно. Ценообразование абсолютно прозрачное, без скрытых платежей или неожиданных сюрпризов. Рад видеть, что на рынке еще есть компании, которым можно доверять. От всего сердца рекомендую "ГЕОПРОЕКТ"!</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <span class="material-symbols-outlined">reviews</span>
+                    <img src="./images/gallery4.jpg" alt="" class="review-img">
+                    <div class="review-text">
+                        <h4>Жора</h4>
+                        <p>Взаимодействие с компанией "ГЕОПРОЕКТ" оставило только положительные впечатления. Их команда геодезистов проявила высокий профессионализм, выполнив все работы быстро и точно. Ценообразование абсолютно прозрачное, без скрытых платежей или неожиданных сюрпризов. Рад видеть, что на рынке еще есть компании, которым можно доверять. От всего сердца рекомендую "ГЕОПРОЕКТ"!</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+        </div>
+        <div class="calculator" id="calculator">
+            <h1 class="calculator-title title-anim" id="try-calc">Попробуйте калькулятор!</h1>
+            <div class="reasons-to-use">
+                <div class="calc-reason title-anim" id="1reason">
+                    <span class="material-symbols-outlined">payments</span>
+                    <h1>Точная оценка затрат</h1>
+                    <p>Калькулятор позволяет клиентам получить быструю и точную оценку стоимости геодезических услуг, исключая необходимость обращения за индивидуальным расчетом. Это упрощает процесс принятия решения и позволяет клиентам более ясно понимать финансовые обязательства.</p>
+                </div>
+                <div class="calc-reason title-anim" id="2reason">
+                    <span class="material-symbols-outlined">schedule</span>
+                    <h1>Эффективность времени</h1>
+                    <p>Клиенты могут мгновенно получить стоимость заказа, используя калькулятор, без необходимости звонить или отправлять запросы на расчет. Это сэкономит как клиентам, так и вашей компании время и ресурсы.</p>
+                </div>
+                <div class="calc-reason title-anim" id="3reason">
+                    <span class="material-symbols-outlined">crop_free</span>
+                    <h1>Прозрачность</h1>
+                    <p>Калькулятор позволяет клиентам легко сравнивать стоимость различных услуг или опций, что способствует прозрачности в процессе принятия решения. Когда клиент видит ясные цифры, это может увеличить их уверенность в выборе вашей компании для предоставления геодезических услуг.</p>
+                </div>
+            </div>
+            <!-- <button class="order-btn">Сделать заказ</button> -->
+            <button class="calculator-btn openModal title-anim" id="calc-btn">Калькулятор</button>
+        </div>
+        <footer>
+            <p class="footer-text">©2023 ГЕОПРОЕКТ</p>
+        </footer>
     </div>
-    <footer>
-        <p class="footer-text">©2023 ГЕОПРОЕКТ</p>
-    </footer>
 </body>
 </html>
