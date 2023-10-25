@@ -332,7 +332,7 @@ window.addEventListener('resize', () => {
             }
         });
     } else if (w < 1200) {
-        swiper = new Swiper(".mySwiper", {
+            swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
             spaceBetween: 30,
             speed: 500,

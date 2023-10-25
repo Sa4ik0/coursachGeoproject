@@ -1119,13 +1119,19 @@ p {
         flex-direction: column;
     }
     .info-image {
-        width: 350px;
+        width: 100%;
+    }
+    .left-text {
+        font-size: 12px;
+    }
+    .left-title {
+        font-size: 24px;
     }
     .left {
         width: auto;
     }
     .swiper2 {
-        width: 100%;
+        width: 50%;
     }
     .review-text h4{
         font-size: 20px;
@@ -1176,6 +1182,11 @@ p {
     .calculator-btn {
         font-size: 20px;
     }
+
+    footer {
+        padding: 30px;
+    }
+
 
     header {
         padding: 15px;
