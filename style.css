@@ -855,7 +855,6 @@ p {
     border-radius: 20px;
     background-color: black;
     height: 570px !important;
-    z-index: 0 !important;
 }
 
 .swiper-slide img {
@@ -1398,16 +1397,3 @@ p {
     transform-origin: 0 0; /* see note above */
 }
 .ldio-qu8yosl18rh div { box-sizing: content-box; }
-/* .gallery-images div:not(:first-child) {
-transition: opacity 1s ease-in-out;
-} */
-
-/* .gallery-image1, .gallery-image2, .gallery-image3 {
-width: 100%;
-background-size: cover;
-background-position: center;
-} */
-
-/* .active {
-    background-image: ();
-} */
