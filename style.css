@@ -47,6 +47,7 @@ footer {
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 100px;
+    padding-bottom: 0px;
     height: min-content;
     justify-content: flex-start;
     overflow: hidden;
