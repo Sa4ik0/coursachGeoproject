@@ -198,13 +198,13 @@ main:nth-child(2) .info:nth-child(2) {
 
 .left-title {
     transition: transform 0.3s ease-in-out;
-    font-size: 48px;
+    font-size: 36px;
     text-align: justify;
 }
 
 .left-text {
     text-align: justify;
-    font-size: 22px;
+    font-size: 16px;
 }
 
 h4 {
