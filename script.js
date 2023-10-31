@@ -18,6 +18,8 @@ const openModal = () => {
     document.body.style.overflow = 'hidden';
     calculatorModal.style.display = 'block';
     modalBackground.style.display = 'block';
+    const idOrderElement = document.getElementById('id-order');
+idOrderElement.textContent = `ID-Заказа: ${Math.random().toString(36).substring(2, 8)}`;
 };
 
 const closeModal = () => {
@@ -115,9 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let loading = document.getElementById('loading');
     loading.style.display = 'none';
-  
-    let content = document.getElementById('content');
-    content.style.display = 'block';
+
 });
 
 const calculate = () => {
@@ -165,47 +165,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-const randomId = Math.random().toString(36).substring(2, 8);
-const idOrderElement = document.getElementById('id-order');
-idOrderElement.textContent = `ID-Заказа: ${randomId}`;
-
 calculate();
-
-// const carousel = document.querySelector(".bottom-images");
-// const firstImg = document.querySelector(".bottom-images img");
-// const arrowIcons = document.querySelectorAll(".slider-wrapper p");
-
-// let isDragStart = false, prevPageX, prevScrollLeft;
-// let firstImgWidth = firstImg.clientWidth + 20;
-
-// arrowIcons.forEach((icon) => {
-//     icon.addEventListener('click', () => {
-//         carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
-//     });
-// });
-
-// const dragStart = (e) => {
-//     isDragStart = true;
-//     prevPageX = e.pageX;
-//     prevScrollLeft = carousel.scrollLeft;
-// };
-
-// const dragging = (e) => { 
-//     if (!isDragStart) return;
-//     e.preventDefault();
-//     carousel.classList.add("dragging");
-//     let positionDiff = e.pageX - prevPageX;
-//     carousel.scrollLeft = prevScrollLeft - positionDiff;
-// };
-
-// const dragStop = () => {
-//     isDragStart = false;
-//     carousel.classList.remove("dragging");
-// };
-
-// carousel.addEventListener("mousedown", dragStart);
-// carousel.addEventListener("mousemove", dragging);
-// carousel.addEventListener("mouseup", dragStop);
 
 function onEntry(entry) {
     entry.forEach((change) => {
@@ -307,8 +267,7 @@ const setDynamicWidth = () => {
 
 window.addEventListener('resize', () => {  
     setDynamicWidth();
-    let w = window.innerWidth;
-    console.log(w);
+    let w = window.innerWidth;;
     if (w > 1750) {
             swiper = new Swiper(".mySwiper", {
             slidesPerView: 3,
@@ -349,3 +308,23 @@ let swiper2 = new Swiper(".mySwiper2", {
     effect: "cards",
     grabCursor: true,
 });
+
+document.querySelector('.calculator-btn-submit').addEventListener('click', (e) => {
+    e.preventDefault()
+    closeModal()
+    sendForm()
+
+})
+
+const sendForm = () => {
+    const id = document.getElementById('id-order');
+    const price = document.getElementById('result').textContent;
+    const phone = document.getElementById("tel").value;
+    const surname = document.getElementById("surname").value;
+    const name = document.getElementById("name").value;
+    const lastname = document.getElementById("lastname").value;
+    const town = document.getElementById("town").value;
+    const size = document.getElementById("slider").value;
+    const hard = document.querySelector('.dropdown-btn').textContent;
+    console.log(id, price, phone, surname, name, lastname, town, size, hard);
+}
