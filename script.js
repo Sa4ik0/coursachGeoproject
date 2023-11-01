@@ -27,6 +27,7 @@ const closeModal = () => {
     calculatorModal.style.display = 'none';
     modalBackground.style.display = 'none';
     document.querySelector('.modalWrapper').reset();
+    calculate();
     sliderValue.textContent = initialValue;
 };
 
