@@ -26,6 +26,8 @@ const closeModal = () => {
     document.body.style.overflow = 'auto';
     calculatorModal.style.display = 'none';
     modalBackground.style.display = 'none';
+    document.querySelector('.modalWrapper').reset();
+    sliderValue.textContent = initialValue;
 };
 
 openModalButtons.forEach((button) => {
@@ -85,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     } else if (w > 1920) {
-        let swiper = new Swiper(".mySwiper", {
+            swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
             spaceBetween: 30,
             speed: 500,
@@ -127,16 +129,16 @@ const calculate = () => {
     let complexityFactor = 1;
 
     switch (complexityDropdown.innerText) {
-        case "Болото +20%":
+        case "Болото":
             complexityFactor = 1.2;
             break;
-        case "Высотные измерения +15%":
+        case "Высотные измерения":
             complexityFactor = 1.15;
             break;
-        case "Канавы +10%":
+        case "Канавы":
             complexityFactor = 1.1;
             break;
-        case "Горная местность +25%":
+        case "Горная местность":
             complexityFactor = 1.25;
             break;
         case "Без сложностей":
@@ -311,14 +313,13 @@ let swiper2 = new Swiper(".mySwiper2", {
 
 document.querySelector('.calculator-btn-submit').addEventListener('click', (e) => {
     e.preventDefault()
-    closeModal()
     sendForm()
-
+    closeModal()
 })
 
 const sendForm = () => {
-    const id = document.getElementById('id-order');
-    const price = document.getElementById('result').textContent;
+    const id = document.getElementById('id-order').textContent.match(/ID-Заказа: (\S+)/);
+    const price = document.getElementById('result').textContent.match(/Стоимость заказа: (\S+)/);
     const phone = document.getElementById("tel").value;
     const surname = document.getElementById("surname").value;
     const name = document.getElementById("name").value;
@@ -326,5 +327,38 @@ const sendForm = () => {
     const town = document.getElementById("town").value;
     const size = document.getElementById("slider").value;
     const hard = document.querySelector('.dropdown-btn').textContent;
-    console.log(id, price, phone, surname, name, lastname, town, size, hard);
+
+    // console.log(id[1], price[1], phone, surname, name, lastname, town, size, hard);
+
+    const orderData = {
+        id: id[1],
+        price: price[1],
+        phone: phone,
+        surname: surname,
+        name: name,
+        lastname: lastname,
+        town: town,
+        size: size,
+        hard: hard
+    };
+    
+    localStorage.setItem('orderData', JSON.stringify(orderData));
 }
+
+document.getElementById('tel').addEventListener('input', function(event) {
+    const startsWithPlus = event.target.value.startsWith('+');
+
+    event.target.value = event.target.value.replace(/[^\d]/g, '');
+
+    if (startsWithPlus) {
+        event.target.value = '+' + event.target.value;
+    }
+});
+
+const inputs = ['lastname', 'town', 'name', 'surname'];
+
+inputs.forEach(inputId => {
+    document.getElementById(inputId).addEventListener('input', function(event) {
+        event.target.value = event.target.value.replace(/[^a-zA-Zа-яА-ЯёЁ\s]/g, '');
+    });
+});
