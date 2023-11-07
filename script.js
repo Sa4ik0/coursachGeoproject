@@ -329,8 +329,6 @@ const sendForm = () => {
     const size = document.getElementById("slider").value;
     const hard = document.querySelector('.dropdown-btn').textContent;
 
-    // console.log(id[1], price[1], phone, surname, name, lastname, town, size, hard);
-
     const orderData = {
         id: id[1],
         price: price[1],
@@ -340,11 +338,26 @@ const sendForm = () => {
         lastname: lastname,
         town: town,
         size: size,
-        hard: hard
+        hard: hard,
     };
-    
+
     localStorage.setItem('orderData', JSON.stringify(orderData));
-}
+
+    fetch('http://localhost:3000/saveOrder', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderData),
+    })
+    .then((response) => response.text())
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+};
 
 document.getElementById('tel').addEventListener('input', function(event) {
     const startsWithPlus = event.target.value.startsWith('+');
