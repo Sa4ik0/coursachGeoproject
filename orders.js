@@ -38,7 +38,7 @@ function renderTable(data) {
     // Добавляем ячейку для кнопки "Заказ выполнен" или "Вернуть заказ"
     let actionCell = document.createElement('td');
     let actionButton = document.createElement('button');
-    actionButton.textContent = item.completed ? 'Вернуть заказ' : 'Заказ выполнен';
+    actionButton.textContent = item.completed ? 'ГОТОВ' : 'НЕ ГОТОВ';
     actionButton.onclick = function() {
       toggleOrderStatus(item.id, !item.completed);
     };

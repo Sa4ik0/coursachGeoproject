@@ -9,7 +9,7 @@
     "town": "Москва",
     "size": "3596",
     "hard": "Горная местность",
-    "completed": false
+    "completed": true
   },
   {
     "id": "twh5b0",
@@ -33,7 +33,7 @@
     "town": "Кразик",
     "size": "2800",
     "hard": "Болото",
-    "completed": true
+    "completed": false
   },
   {
     "id": "1v0g4w",
@@ -45,6 +45,6 @@
     "town": "Переславль Залесский",
     "size": "5315",
     "hard": "Болото",
-    "completed": false
+    "completed": true
   }
 ]
