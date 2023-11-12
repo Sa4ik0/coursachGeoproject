@@ -16,7 +16,7 @@ function fetchData() {
 
 function renderTable(data) {
   let tableBody = document.getElementById('dataBody');
-  tableBody.innerHTML = ''; // Очищаем содержимое tbody перед перерисовкой
+  tableBody.innerHTML = ''; 
 
   // Перебираем каждый элемент массива
   data.forEach(function(item) {
@@ -79,5 +79,4 @@ function updateOrderStatusOnServer(orderId, newStatus) {
   });
 }
 
-// Вызываем fetchData() для загрузки данных при загрузке страницы
 fetchData();

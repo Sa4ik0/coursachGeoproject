@@ -19,10 +19,11 @@ const openModal = () => {
     calculatorModal.style.display = 'block';
     modalBackground.style.display = 'block';
     const idOrderElement = document.getElementById('id-order');
-idOrderElement.textContent = `ID-Заказа: ${Math.random().toString(36).substring(2, 8)}`;
+    idOrderElement.textContent = `ID-Заказа: ${Math.random().toString(36).substring(2, 8)}`;
 };
 
 const closeModal = () => {
+    e.preventDefault()
     document.body.style.overflow = 'auto';
     calculatorModal.style.display = 'none';
     modalBackground.style.display = 'none';
@@ -312,13 +313,42 @@ let swiper2 = new Swiper(".mySwiper2", {
     grabCursor: true,
 });
 
+const validateForm = () => {
+    const tel = document.getElementById('tel').value;
+    const surname = document.getElementById("surname").value;
+    const name = document.getElementById("name").value;
+    const town = document.getElementById("town").value;
+    const size = document.getElementById("slider").value;
+
+    if (tel.trim() === '' || surname.trim() === '' || name.trim() === '' || town.trim() === '' || size.trim() === '') {
+        showErrorToast('Заполните все поля!!!');
+        return;
+    }
+
+    sendForm();
+    closeModal();
+};
+
+const showErrorToast = (message) => {
+    Toastify({
+        text: message,
+        duration: 5000,
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "red",
+        stopOnFocus: true,
+    }).showToast();
+};
+
 document.querySelector('.calculator-btn-submit').addEventListener('click', (e) => {
-    e.preventDefault()
-    sendForm()
-    closeModal()
-})
+    e.preventDefault();
+    validateForm();
+}); 
 
 const sendForm = () => {
+    e.preventDefault();
     const id = document.getElementById('id-order').textContent.match(/ID-Заказа: (\S+)/);
     const price = document.getElementById('result').textContent.match(/Стоимость заказа: (\S+)/);
     const phone = document.getElementById("tel").value;
@@ -341,21 +371,37 @@ const sendForm = () => {
         hard: hard,
     };
 
-    localStorage.setItem('orderData', JSON.stringify(orderData));
-
     fetch('http://localhost:3000/saveOrder', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(orderData),
     })
     .then((response) => response.text())
     .then((data) => {
-        console.log(data);
+        Toastify({
+            text: "Спасибо за оформление заказа!",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "green",
+            stopOnFocus: true,
+        }).showToast();
     })
     .catch((error) => {
-        console.error(error);
+        Toastify({
+            text: "Произошла ошибка при отправке данных!",
+            duration: 2000,
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "red",
+            stopOnFocus: true,
+        }).showToast();
     });
 };
 
