@@ -23,7 +23,6 @@ const openModal = () => {
 };
 
 const closeModal = () => {
-    e.preventDefault()
     document.body.style.overflow = 'auto';
     calculatorModal.style.display = 'none';
     modalBackground.style.display = 'none';
