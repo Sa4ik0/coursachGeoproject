@@ -12,7 +12,7 @@
 }
 
 ::-webkit-scrollbar {
-    width: 0; /* Для Chrome, Safari и Opera */
+    width: 0;
 }
 
 html {
@@ -30,7 +30,7 @@ label {
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 16px; /* 100% */
+    line-height: 16px;
 }
 
 input {

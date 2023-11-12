@@ -1,3 +1,50 @@
 [
-
+  {
+    "id": "9mrb2g",
+    "price": "449500",
+    "phone": "78005553535",
+    "surname": "Агутин",
+    "name": "Бебра",
+    "lastname": "Фигович",
+    "town": "Москва",
+    "size": "3596",
+    "hard": "Горная местность",
+    "completed": false
+  },
+  {
+    "id": "twh5b0",
+    "price": "363000",
+    "phone": "78856753284",
+    "surname": "Дыбенко",
+    "name": "Даниил",
+    "lastname": "Санаториевич",
+    "town": "Алекс",
+    "size": "2904",
+    "hard": "Горная местность",
+    "completed": false
+  },
+  {
+    "id": "vu0lkg",
+    "price": "336000",
+    "phone": "79853335683",
+    "surname": "Назаров",
+    "name": "Игорь",
+    "lastname": "Бебрович",
+    "town": "Кразик",
+    "size": "2800",
+    "hard": "Болото",
+    "completed": true
+  },
+  {
+    "id": "1v0g4w",
+    "price": "637800",
+    "phone": "79109632762",
+    "surname": "Симаков",
+    "name": "Богдан",
+    "lastname": "Опиумович",
+    "town": "Переславль Залесский",
+    "size": "5315",
+    "hard": "Болото",
+    "completed": false
+  }
 ]

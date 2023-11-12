@@ -16,6 +16,20 @@ app.use((req, res, next) => {
   next();
 });
 
+// Загрузка заказов
+app.get('/getOrders', (req, res) => {
+  fs.readFile('orders.json', (err, data) => {
+    if (err) {
+      res.status(500).send('Error reading file');
+      return;
+    }
+
+    const orders = JSON.parse(data);
+    res.status(200).json(orders);
+  });
+});
+
+// Сохранение заказа
 app.post('/saveOrder', (req, res) => {
   const orderData = req.body;
 
@@ -35,6 +49,38 @@ app.post('/saveOrder', (req, res) => {
       }
 
       res.status(200).send('Order data saved successfully');
+    });
+  });
+});
+
+// Обновление статуса заказа
+app.put('/updateOrderStatus/:orderId', (req, res) => {
+  const orderId = req.params.orderId;
+  const newStatus = req.body.status;
+
+  fs.readFile('orders.json', (err, data) => {
+    if (err) {
+      res.status(500).send('Error reading file');
+      return;
+    }
+
+    const orders = JSON.parse(data);
+    const orderToUpdate = orders.find(order => order.id === orderId);
+
+    if (!orderToUpdate) {
+      res.status(404).send('Order not found');
+      return;
+    }
+
+    orderToUpdate.completed = newStatus;
+
+    fs.writeFile('orders.json', JSON.stringify(orders, null, 2), (err) => {
+      if (err) {
+        res.status(500).send('Error writing file');
+        return;
+      }
+
+      res.status(200).send('Order status updated successfully');
     });
   });
 });
