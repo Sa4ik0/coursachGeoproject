@@ -347,7 +347,6 @@ document.querySelector('.calculator-btn-submit').addEventListener('click', (e) =
 }); 
 
 const sendForm = () => {
-    e.preventDefault();
     const id = document.getElementById('id-order').textContent.match(/ID-Заказа: (\S+)/);
     const price = document.getElementById('result').textContent.match(/Стоимость заказа: (\S+)/);
     const phone = document.getElementById("tel").value;

@@ -33,6 +33,10 @@ label {
     line-height: 16px;
 }
 
+.menu_item:hover a{
+    text-decoration: underline;
+}
+
 input {
     background: #FFF;
     height: 43px;
