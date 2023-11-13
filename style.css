@@ -985,12 +985,14 @@ p {
 @media screen and (max-width: 1906px) {
     .present_engineer {
         font-size: 450px !important;
+        margin-left: -19px !important;
     }
     .present_text {
         font-size: 45px !important;
     }
     .present_terrain {
         font-size: 450px !important;
+        margin-right: -43px !important;
     }
 }
 
@@ -1006,12 +1008,14 @@ p {
 @media screen and (max-width: 1550px) {
     .present_engineer {
         font-size: 350px !important;
+        margin-left: -12px !important;
     }
     .present_text {
         font-size: 40px !important;
     }
     .present_terrain {
         font-size: 350px !important;
+        margin-right: -33px !important;
     }
     .left-title {
         font-size: 28px;
@@ -1027,12 +1031,14 @@ p {
 @media screen and (max-width: 1300px) {
     .present_engineer {
         font-size: 250px !important;
+        margin-left: -8px !important;
     }
     .present_text {
         font-size: 35px !important;
     }
     .present_terrain {
         font-size: 250px !important;
+        margin-right: -23px !important;
     }
     .left {
         max-width: 600px;
@@ -1042,12 +1048,14 @@ p {
 @media screen and (max-width: 1150px) {
     .present_engineer {
         font-size: 150px !important;
+            
     }
     .present_text {
         font-size: 30px !important;
     }
     .present_terrain {
         font-size: 150px !important;
+        margin-right: -15px !important;
     }
     .left {
         max-width: 400px;
@@ -1086,12 +1094,14 @@ p {
 @media screen and (max-width: 815px) {
     .present_engineer {
         font-size: 100px !important;
+        margin-left: 0px !important;
     }
     .present_text {
         font-size: 20px !important;
     }
     .present_terrain {
         font-size: 100px !important;
+        margin-right: -10px !important;
     }
     .calculator-title {
         font-size: 32px;
