@@ -16,55 +16,6 @@ function fetchData() {
 
 function renderTable(data) {
   let tableBody = document.getElementById('dataBody');
-  tableBody.innerHTML = ''; 
-
-  // Перебираем каждый элемент массива
-  data.forEach(function(item) {
-    let row = document.createElement('tr');
-
-    // Создаем ячейки и заполняем их данными
-    let properties = ['id', 'price', 'phone', 'surname', 'name', 'lastname', 'town', 'size', 'hard'];
-    properties.forEach(function(prop) {
-      let cell = document.createElement('td');
-      cell.textContent = item[prop];
-      row.appendChild(cell);
-    });
-
-    // Добавляем класс "completed" для выполненных заказов
-    if (item.completed) {
-      row.classList.add('completed');
-    }
-
-    // Добавляем ячейкии
-    let actionCell = document.createElement('td');
-    let editCell = document.createElement('td');
-
-    let actionButton = document.createElement('button');
-    let editButton = document.createElement('button');
-
-    actionButton.textContent = item.completed ? 'ГОТОВ' : 'НЕ ГОТОВ';
-    editButton.textContent = 'Редакт'
-
-    actionButton.onclick = function() {
-      toggleOrderStatus(item.id, !item.completed);
-    };
-
-    editButton.onclick = () => {
-      editOrder(item.id);
-    };
-
-    actionCell.appendChild(actionButton);
-    editCell.appendChild(editButton);
-
-    row.appendChild(editCell);
-    row.appendChild(actionCell);
-
-    tableBody.appendChild(row);
-  });
-}
-
-function renderTable(data) {
-  let tableBody = document.getElementById('dataBody');
   tableBody.innerHTML = '';
 
   data.forEach(function(item) {
@@ -76,19 +27,42 @@ function renderTable(data) {
 
       // Создаем редактируемый элемент
       let editableElement = document.createElement('input');
-      editableElement.value = item[prop];
-      editableElement.readOnly = true; // по умолчанию не редактируемый
+      if (prop == 'id' || prop == 'price' || prop == "size" || prop == 'hard') {
+        cell.innerText = item[prop];
+        if (prop == "price") {
+          cell.classList = 'price'
+        } else if (prop == "hard") {
+          cell.classList = 'hard'
+        } else if (prop == "size") {
+          cell.classList = 'size'
+        }
+      }  else {
+        if (prop == 'town') {
+          cell.classList = 'town'
+        } else if (prop == 'surname') {
+          cell.classList = 'surname'
+        } else if (prop == 'name') {
+          cell.classList = 'name'
+        } else if (prop == 'lastname') {
+          cell.classList = 'lastname'
+        } 
+        editableElement.value = item[prop];
+        editableElement.readOnly = true;
+        cell.appendChild(editableElement);
+      }
+      // editableElement.value = item[prop];
+      // editableElement.readOnly = true; // по умолчанию не редактируемый
 
       editableElement.ondblclick = function() {
         // Двойной клик для начала редактирования
         editableElement.readOnly = false;
       }
 
-      editableElement.onblur = function() {
+      editableElement.addEventListener('blur', () => {
         // Потеря фокуса для сохранения изменений
         editableElement.readOnly = true;
         updateOrderProperty(item.id, prop, editableElement.value);
-      }
+      })
 
       editableElement.onkeypress = function(e) {
         // Нажатие Enter для сохранения изменений
@@ -97,8 +71,6 @@ function renderTable(data) {
           updateOrderProperty(item.id, prop, editableElement.value);
         }
       }
-
-      cell.appendChild(editableElement);
       row.appendChild(cell);
     });
 
@@ -119,6 +91,161 @@ function renderTable(data) {
   });
 }
 
+let side = true;
+let hardSide = true;
+
+$('th').click((e) =>{
+  if (e.target.textContent == "Цена") {
+    const table = $('#dataBody');
+    const rows = table.find('tr').toArray();
+
+    rows.sort(function(a, b) {
+      const priceA = parseFloat($(a).find('td.price').text());
+      const priceB = parseFloat($(b).find('td.price').text());
+
+      if (side) {
+        return priceA - priceB;
+      } else {
+        return priceB - priceA;
+      }
+    });
+
+    table.empty();
+
+    $.each(rows, function(index, row) {
+      table.append(row);
+    });
+
+    side = !side; // Изменяем направление сортировки
+  } else if (e.target.textContent == "Сложность") {
+    const table = $('#dataBody');
+    const rows = table.find('tr').toArray();
+    rows.sort(function(a, b) {
+      const difficultyA = $(a).find('td.hard').text().trim(); // Получаем текст из столбца "Сложность"
+      const difficultyB = $(b).find('td.hard').text().trim();
+
+      if (side) {
+        return difficultyA.localeCompare(difficultyB); // Сортировка по алфавиту
+      } else {
+        return difficultyB.localeCompare(difficultyA); // Обратная сортировка
+      }
+    });
+
+    table.empty();
+
+    $.each(rows, function(index, row) {
+      table.append(row);
+    });
+
+    side = !side; // Переключаем направление сортировки
+  } else if (e.target.textContent == "Город") {
+    const table = $('#dataBody');
+    const rows = table.find('tr').toArray();
+    rows.sort(function(a, b) {
+      const cityA = $(a).find('td.town input').val().trim(); // Получаем значение из input внутри ячейки "Город"
+      const cityB = $(b).find('td.town input').val().trim();
+
+      if (side) {
+        return cityA.localeCompare(cityB); // Сортировка по алфавиту
+      } else {
+        return cityB.localeCompare(cityA); // Обратная сортировка
+      }
+    });
+
+    table.empty();
+
+    $.each(rows, function(index, row) {
+      table.append(row);
+    });
+
+    side = !side; // Переключаем направление сортировки
+  } else if (e.target.textContent == "Фамилия") {
+    const table = $('#dataBody');
+    const rows = table.find('tr').toArray();
+    rows.sort(function(a, b) {
+      const cityA = $(a).find('td.surname input').val().trim(); // Получаем значение из input внутри ячейки "Город"
+      const cityB = $(b).find('td.surname input').val().trim();
+
+      if (side) {
+        return cityA.localeCompare(cityB); // Сортировка по алфавиту
+      } else {
+        return cityB.localeCompare(cityA); // Обратная сортировка
+      }
+    });
+
+    table.empty();
+
+    $.each(rows, function(index, row) {
+      table.append(row);
+    });
+
+    side = !side; // Переключаем направление сортировки
+  } else if (e.target.textContent == "Имя") {
+    const table = $('#dataBody');
+    const rows = table.find('tr').toArray();
+    rows.sort(function(a, b) {
+      const cityA = $(a).find('td.name input').val().trim(); // Получаем значение из input внутри ячейки "Город"
+      const cityB = $(b).find('td.name input').val().trim();
+
+      if (side) {
+        return cityA.localeCompare(cityB); // Сортировка по алфавиту
+      } else {
+        return cityB.localeCompare(cityA); // Обратная сортировка
+      }
+    });
+
+    table.empty();
+
+    $.each(rows, function(index, row) {
+      table.append(row);
+    });
+
+    side = !side; // Переключаем направление сортировки
+  } else if (e.target.textContent == "Отчество") {
+    const table = $('#dataBody');
+    const rows = table.find('tr').toArray();
+    rows.sort(function(a, b) {
+      const cityA = $(a).find('td.lastname input').val().trim(); // Получаем значение из input внутри ячейки "Город"
+      const cityB = $(b).find('td.lastname input').val().trim();
+
+      if (side) {
+        return cityA.localeCompare(cityB); // Сортировка по алфавиту
+      } else {
+        return cityB.localeCompare(cityA); // Обратная сортировка
+      }
+    });
+
+    table.empty();
+
+    $.each(rows, function(index, row) {
+      table.append(row);
+    });
+
+    side = !side; // Переключаем направление сортировки
+  } else if (e.target.textContent == "Площадь") {
+    const table = $('#dataBody');
+    const rows = table.find('tr').toArray();
+
+    rows.sort(function(a, b) {
+      const priceA = parseFloat($(a).find('td.size').text());
+      const priceB = parseFloat($(b).find('td.size').text());
+
+      if (side) {
+        return priceA - priceB;
+      } else {
+        return priceB - priceA;
+      }
+    });
+
+    table.empty();
+
+    $.each(rows, function(index, row) {
+      table.append(row);
+    });
+
+    side = !side; // Изменяем направление сортировки
+  }
+})
 
 function toggleOrderStatus(orderId, newStatus) {
   // Обновляем статус заказа на сервере

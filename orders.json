@@ -69,13 +69,13 @@
     "town": "Александров",
     "size": "7669",
     "hard": "Канавы",
-    "completed": true
+    "completed": false
   },
   {
     "id": "dzqpca",
     "price": "748560",
     "phone": "79956315852",
-    "surname": "Венга",
+    "surname": "Даззл",
     "name": "Алеся",
     "lastname": "Дотовна",
     "town": "Питер",
