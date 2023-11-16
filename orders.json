@@ -9,7 +9,7 @@
     "town": "Москва",
     "size": "3596",
     "hard": "Горная местность",
-    "completed": true
+    "completed": false
   },
   {
     "id": "twh5b0",
@@ -45,7 +45,7 @@
     "town": "Переславль Залесский",
     "size": "5315",
     "hard": "Болото",
-    "completed": true
+    "completed": false
   },
   {
     "id": "qvc5jc",
@@ -57,7 +57,7 @@
     "town": "Мокренько",
     "size": "7254",
     "hard": "Канавы",
-    "completed": true
+    "completed": false
   },
   {
     "id": "fkumjm",
@@ -69,7 +69,7 @@
     "town": "Александров",
     "size": "7669",
     "hard": "Канавы",
-    "completed": false
+    "completed": true
   },
   {
     "id": "dzqpca",
