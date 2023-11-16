@@ -14,6 +14,75 @@ highlightArea.style.width = `${initialSize}px`;
 highlightArea.style.height = `${initialSize}px`;
 sliderValue.textContent = initialValue;
 
+let scrollTimeout;
+
+const getRandomInt = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    max += 1;
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+const randomAnswer = () => {
+    switch (getRandomInt(1, 3)) {
+        case 1:
+            return 'Здравствуйте, занимаюсь вашим вопросом, ожидайте.'
+        case 2:
+            return 'Здравствуйте, опишите подробней вашу проблему.'
+        case 3:
+            return 'АААААААААААА, ПРИВЕТ!!!!!!'
+        case 4:
+            return 'Здравствуйте, можете позвонить по номеру - 8(964)733-04-22, чтобы решить Вашу проблему.'
+    }   
+}
+
+$('.open_wrapper')[0].addEventListener('click', (e) => {
+    e.preventDefault()
+    $('.open_chat').css('display', 'flex')
+})
+
+$('.close_chat')[0].addEventListener('click', (e) => {
+    e.preventDefault()
+    $('.open_chat').css('display', 'none')
+})
+
+$('.send_message')[0].addEventListener('click', (e) => {
+    e.preventDefault();
+    if (document.getElementById('message').value == null || document.getElementById('message').value == undefined || document.getElementById('message').value == '' || document.getElementById('message').value == ' ') {
+        document.getElementById('message').style = 'border: 1px solid red';
+        document.getElementById('message').ariaPlaceholder = 'Введите сообщение'
+    } else {
+        let message = document.getElementById('message').value;
+        const areaMessages = document.querySelector('.history');
+        let p = document.createElement('p');
+        p.classList = 'customer';
+        p.innerText = message;
+        areaMessages.prepend(p);
+        document.getElementById('message').value = '';
+        document.getElementById('message').style = 'border: none';
+        setTimeout(() => { 
+            const areaMessages = document.querySelector('.history');
+            let p = document.createElement('p');
+            p.classList = 'support';
+            p.innerText = randomAnswer();
+            areaMessages.prepend(p);
+        }, getRandomInt(5000, 15000));
+    }
+})
+
+$(".history").on('wheel', function(e) {
+    document.body.classList.add('no-scroll');
+    this.scrollTop += e.originalEvent.deltaY;
+
+    // Очистить предыдущий таймер, если он существует
+    clearTimeout(scrollTimeout);
+
+    // Установить новый таймер
+    scrollTimeout = setTimeout(() => {
+        document.body.classList.remove('no-scroll');
+    }, 75);
+});
+
 const openModal = () => {
     document.body.style.overflow = 'hidden';
     calculatorModal.style.display = 'block';
