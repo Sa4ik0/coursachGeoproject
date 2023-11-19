@@ -2,7 +2,7 @@ const fetchData = () => {
   fetch('http://localhost:3000/getOrders')
     .then(response => {
       if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+        throw new Error(`HTTP ошибка: ${response.status}`);
       }
       return response.json();
     })
@@ -10,7 +10,7 @@ const fetchData = () => {
       renderTable(data);
     })
     .catch(error => {
-      console.error('Error fetching orders:', error);
+      console.error('Ошибка при получении заказов:', error);
     });
 }
 
@@ -265,16 +265,16 @@ const updateOrderProperty = (orderId, property, value) => {
   })
   .then(response => {
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      throw new Error(`HTTP ошибка: ${response.status}`);
     }
     return response.json();
   })
   .then(data => {
-    console.log('Order property updated:', data);
+    console.log('Обновлено свойство заказа:', data);
     // При необходимости обновите данные в таблице или уведомите пользователя
   })
   .catch(error => {
-    console.error('Error updating order property:', error);
+    console.error('Ошибка при обновлении свойства заказа:', error);
   });
 }
 
@@ -288,15 +288,15 @@ const updateOrderStatusOnServer = (orderId, newStatus) => {
   })
   .then(response => {
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      throw new Error(`HTTP ошибка: ${response.status}`);
     }
     return response.json();
   })
   .then(data => {
-    console.log('Order status updated on server:', data);
+    console.log('Обновление статуса заказа на сервере:', data);
   })
   .catch(error => {
-    console.error('Error updating order status on server:', error);
+    console.error('Ошибка обновления статуса заказа на сервере:', error);
   });
 }
 

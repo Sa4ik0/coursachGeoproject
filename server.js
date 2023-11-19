@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*'); // Разрешить все источники (для разработки)
+  res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
@@ -25,7 +25,7 @@ app.put('/updateOrderProperty/:orderId', (req, res) => {
 
   fs.readFile('orders.json', (err, data) => {
     if (err) {
-      res.status(500).send('Error reading file');
+      res.status(500).send('Ошибка при чтении файла');
       return;
     }
 
@@ -33,29 +33,27 @@ app.put('/updateOrderProperty/:orderId', (req, res) => {
     const order = orders.find(order => order.id === orderId);
 
     if (!order) {
-      res.status(404).send('Order not found');
+      res.status(404).send('Заказ не найден');
       return;
     }
 
-    // Обновляем свойство заказа
     order[property] = value;
 
     fs.writeFile('orders.json', JSON.stringify(orders, null, 2), (err) => {
       if (err) {
-        res.status(500).send('Error writing file');
+        res.status(500).send('Ошибка при записи файла');
         return;
       }
 
-      res.status(200).json({ message: 'Order property updated successfully' });
+      res.status(200).json({ message: 'Свойство заказа успешно обновлено' });
     });
   });
 });
 
-// Загрузка заказов
 app.get('/getOrders', (req, res) => {
   fs.readFile('orders.json', (err, data) => {
     if (err) {
-      res.status(500).send('Error reading file');
+      res.status(500).send('Ошибка при чтении файла');
       return;
     }
 
@@ -64,13 +62,12 @@ app.get('/getOrders', (req, res) => {
   });
 });
 
-// Сохранение заказа
 app.post('/saveOrder', (req, res) => {
   const orderData = req.body;
 
   fs.readFile('orders.json', (err, data) => {
     if (err) {
-      res.status(500).send('Error reading file');
+      res.status(500).send('Ошибка при чтении файла');
       return;
     }
 
@@ -79,11 +76,11 @@ app.post('/saveOrder', (req, res) => {
 
     fs.writeFile('orders.json', JSON.stringify(orders, null, 2), (err) => {
       if (err) {
-        res.status(500).send('Error writing file');
+        res.status(500).send('Ошибка при записи файла');
         return;
       }
 
-      res.status(200).send('Order data saved successfully');
+      res.status(200).send('Статус заказа обновлен успешно!');
     });
   });
 });
@@ -94,7 +91,7 @@ app.put('/updateOrderStatus/:orderId', (req, res) => {
 
   fs.readFile('orders.json', (err, data) => {
     if (err) {
-      res.status(500).send('Error reading file');
+      res.status(500).send('Ошибка при чтении файла');
       return;
     }
 
@@ -102,7 +99,7 @@ app.put('/updateOrderStatus/:orderId', (req, res) => {
     const orderToUpdate = orders.find(order => order.id === orderId);
 
     if (!orderToUpdate) {
-      res.status(404).send('Order not found');
+      res.status(404).send('Заказ не найден');
       return;
     }
 
@@ -110,15 +107,15 @@ app.put('/updateOrderStatus/:orderId', (req, res) => {
 
     fs.writeFile('orders.json', JSON.stringify(orders, null, 2), (err) => {
       if (err) {
-        res.status(500).send('Error writing file');
+        res.status(500).send('Ошибка при записи файла');
         return;
       }
 
-      res.status(200).send('Order status updated successfully');
+      res.status(200).send('Статус заказа обновлен успешно!');
     });
   });
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Сервер запущен на - http://localhost:${port}`);
 });
