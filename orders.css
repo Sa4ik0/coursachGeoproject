@@ -29,6 +29,10 @@ td:last-child {
   padding-right: 10px;
 }
 
+th:hover {
+  cursor: pointer;
+}
+
 td {
   padding-left: 10px;
   padding-right: 10px;
@@ -95,4 +99,3 @@ input {
   display: flex;
   text-align: center;
 }
-

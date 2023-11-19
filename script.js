@@ -70,7 +70,7 @@ $('.send_message')[0].addEventListener('click', (e) => {
     }
 })
 
-$(".history").on('wheel', function(e) {
+$(".history").on('wheel', (e) => {
     document.body.classList.add('no-scroll');
     this.scrollTop += e.originalEvent.deltaY;
 
@@ -239,7 +239,7 @@ document.addEventListener('click', (e) => {
 
 calculate();
 
-function onEntry(entry) {
+const onEntry = (entry) => {
     entry.forEach((change) => {
         if (change.target.id == 'sec-anim' && change.isIntersecting) {
             change.target.classList.add('animate__animated');
@@ -472,7 +472,7 @@ const sendForm = () => {
     });
 };
 
-document.getElementById('tel').addEventListener('input', function(event) {
+document.getElementById('tel').addEventListener('input', (event) => {
     const startsWithPlus = event.target.value.startsWith('+');
 
     event.target.value = event.target.value.replace(/[^\d]/g, '');
@@ -485,7 +485,7 @@ document.getElementById('tel').addEventListener('input', function(event) {
 const inputs = ['lastname', 'town', 'name', 'surname'];
 
 inputs.forEach(inputId => {
-    document.getElementById(inputId).addEventListener('input', function(event) {
+    document.getElementById(inputId).addEventListener('input', (event) => {
         event.target.value = event.target.value.replace(/[^a-zA-Zа-яА-ЯёЁ\s]/g, '');
     });
 });

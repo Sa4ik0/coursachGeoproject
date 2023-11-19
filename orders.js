@@ -1,4 +1,4 @@
-function fetchData() {
+const fetchData = () => {
   fetch('http://localhost:3000/getOrders')
     .then(response => {
       if (!response.ok) {
@@ -14,15 +14,15 @@ function fetchData() {
     });
 }
 
-function renderTable(data) {
+const renderTable = (data) => {
   let tableBody = document.getElementById('dataBody');
   tableBody.innerHTML = '';
 
-  data.forEach(function(item) {
+  data.forEach((item) => {
     let row = document.createElement('tr');
 
     let properties = ['id', 'price', 'phone', 'surname', 'name', 'lastname', 'town', 'size', 'hard'];
-    properties.forEach(function(prop) {
+    properties.forEach((prop) => {
       let cell = document.createElement('td');
 
       // Создаем редактируемый элемент
@@ -53,7 +53,7 @@ function renderTable(data) {
       // editableElement.value = item[prop];
       // editableElement.readOnly = true; // по умолчанию не редактируемый
 
-      editableElement.ondblclick = function() {
+      editableElement.ondblclick = () => {
         // Двойной клик для начала редактирования
         editableElement.readOnly = false;
       }
@@ -64,7 +64,7 @@ function renderTable(data) {
         updateOrderProperty(item.id, prop, editableElement.value);
       })
 
-      editableElement.onkeypress = function(e) {
+      editableElement.onkeypress = (e) => {
         // Нажатие Enter для сохранения изменений
         if (e.key === 'Enter') {
           editableElement.readOnly = true;
@@ -80,7 +80,7 @@ function renderTable(data) {
 
     actionButton.textContent = item.completed ? 'ГОТОВ' : 'НЕ ГОТОВ';
 
-    actionButton.onclick = function() {
+    actionButton.onclick = () => {
       toggleOrderStatus(item.id, !item.completed);
     };
 
@@ -99,7 +99,7 @@ $('th').click((e) =>{
     const table = $('#dataBody');
     const rows = table.find('tr').toArray();
 
-    rows.sort(function(a, b) {
+    rows.sort((a, b) => {
       const priceA = parseFloat($(a).find('td.price').text());
       const priceB = parseFloat($(b).find('td.price').text());
 
@@ -112,7 +112,7 @@ $('th').click((e) =>{
 
     table.empty();
 
-    $.each(rows, function(index, row) {
+    $.each(rows, (index, row) => {
       table.append(row);
     });
 
@@ -120,7 +120,7 @@ $('th').click((e) =>{
   } else if (e.target.textContent == "Сложность") {
     const table = $('#dataBody');
     const rows = table.find('tr').toArray();
-    rows.sort(function(a, b) {
+    rows.sort((a, b) => {
       const difficultyA = $(a).find('td.hard').text().trim(); // Получаем текст из столбца "Сложность"
       const difficultyB = $(b).find('td.hard').text().trim();
 
@@ -133,7 +133,7 @@ $('th').click((e) =>{
 
     table.empty();
 
-    $.each(rows, function(index, row) {
+    $.each(rows, (index, row) => {
       table.append(row);
     });
 
@@ -141,7 +141,7 @@ $('th').click((e) =>{
   } else if (e.target.textContent == "Город") {
     const table = $('#dataBody');
     const rows = table.find('tr').toArray();
-    rows.sort(function(a, b) {
+    rows.sort((a, b) => {
       const cityA = $(a).find('td.town input').val().trim(); // Получаем значение из input внутри ячейки "Город"
       const cityB = $(b).find('td.town input').val().trim();
 
@@ -154,7 +154,7 @@ $('th').click((e) =>{
 
     table.empty();
 
-    $.each(rows, function(index, row) {
+    $.each(rows, (index, row) => {
       table.append(row);
     });
 
@@ -162,7 +162,7 @@ $('th').click((e) =>{
   } else if (e.target.textContent == "Фамилия") {
     const table = $('#dataBody');
     const rows = table.find('tr').toArray();
-    rows.sort(function(a, b) {
+    rows.sort((a, b) => {
       const cityA = $(a).find('td.surname input').val().trim(); // Получаем значение из input внутри ячейки "Город"
       const cityB = $(b).find('td.surname input').val().trim();
 
@@ -175,7 +175,7 @@ $('th').click((e) =>{
 
     table.empty();
 
-    $.each(rows, function(index, row) {
+    $.each(rows, (index, row) => {
       table.append(row);
     });
 
@@ -183,7 +183,7 @@ $('th').click((e) =>{
   } else if (e.target.textContent == "Имя") {
     const table = $('#dataBody');
     const rows = table.find('tr').toArray();
-    rows.sort(function(a, b) {
+    rows.sort((a, b) => {
       const cityA = $(a).find('td.name input').val().trim(); // Получаем значение из input внутри ячейки "Город"
       const cityB = $(b).find('td.name input').val().trim();
 
@@ -196,7 +196,7 @@ $('th').click((e) =>{
 
     table.empty();
 
-    $.each(rows, function(index, row) {
+    $.each(rows, (index, row) => {
       table.append(row);
     });
 
@@ -204,7 +204,7 @@ $('th').click((e) =>{
   } else if (e.target.textContent == "Отчество") {
     const table = $('#dataBody');
     const rows = table.find('tr').toArray();
-    rows.sort(function(a, b) {
+    rows.sort((a, b) => {
       const cityA = $(a).find('td.lastname input').val().trim(); // Получаем значение из input внутри ячейки "Город"
       const cityB = $(b).find('td.lastname input').val().trim();
 
@@ -217,7 +217,7 @@ $('th').click((e) =>{
 
     table.empty();
 
-    $.each(rows, function(index, row) {
+    $.each(rows, (index, row) => {
       table.append(row);
     });
 
@@ -226,7 +226,7 @@ $('th').click((e) =>{
     const table = $('#dataBody');
     const rows = table.find('tr').toArray();
 
-    rows.sort(function(a, b) {
+    rows.sort((a, b) => {
       const priceA = parseFloat($(a).find('td.size').text());
       const priceB = parseFloat($(b).find('td.size').text());
 
@@ -239,7 +239,7 @@ $('th').click((e) =>{
 
     table.empty();
 
-    $.each(rows, function(index, row) {
+    $.each(rows, (index, row) => {
       table.append(row);
     });
 
@@ -247,7 +247,7 @@ $('th').click((e) =>{
   }
 })
 
-function toggleOrderStatus(orderId, newStatus) {
+const toggleOrderStatus = (orderId, newStatus) => {
   // Обновляем статус заказа на сервере
   updateOrderStatusOnServer(orderId, newStatus);
 
@@ -255,7 +255,7 @@ function toggleOrderStatus(orderId, newStatus) {
   fetchData();
 }
 
-function updateOrderProperty(orderId, property, value) {
+const updateOrderProperty = (orderId, property, value) => {
   fetch(`http://localhost:3000/updateOrderProperty/${orderId}`, {
     method: 'PUT',
     headers: {
@@ -278,7 +278,7 @@ function updateOrderProperty(orderId, property, value) {
   });
 }
 
-function updateOrderStatusOnServer(orderId, newStatus) {
+const updateOrderStatusOnServer = (orderId, newStatus) => {
   fetch(`http://localhost:3000/updateOrderStatus/${orderId}`, {
     method: 'PUT',
     headers: {
